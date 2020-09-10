@@ -24,6 +24,3 @@ Route::get('/testing',function($value='')
 });
 
 
-//Pyae phyo phyo hlaing
-Route::resource('students','StudentController');
-
