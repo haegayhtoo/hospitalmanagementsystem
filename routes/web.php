@@ -22,3 +22,8 @@ Route::get('/testing',function($value='')
 {
 	return 'This is a testing page!';
 });
+
+
+//Pyae phyo phyo hlaing
+Route::resource('students','StudentController');
+
