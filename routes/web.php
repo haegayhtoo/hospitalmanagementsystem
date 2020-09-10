@@ -14,8 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    //return view('welcome');
-    return 'hello laravel';
+    return view('welcome');
+    //return 'hello laravel';
+});
+
+Route::get('/testing',function($value='')
+{
+	return 'This is a testing page!';
 });
 
 Route::get('/admin','AdminPageController@dashboard')->name('dashboard');
