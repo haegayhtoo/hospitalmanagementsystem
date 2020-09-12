@@ -32,3 +32,4 @@ Route::get('doctor','DoctorController@doctorfun')->name('doctorpage');
 
 Route::get('staff','StaffController@stafffun')->name('staffpage');
 
+Route::get('schedule','ScheduleController@schedulefun')->name('schedulepage');
