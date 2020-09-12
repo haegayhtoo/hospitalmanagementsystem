@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Room extends Model
 {
-    protected $fillable=['room_no','room_type','daily_charges'];
+     protected $fillable = 
+   [
+        'room_no', 'room_type', 'daily_charges'
+    ];
 }
