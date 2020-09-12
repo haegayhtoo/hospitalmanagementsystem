@@ -24,3 +24,5 @@ Route::get('/testing',function($value='')
 });
 
 Route::get('/admin','AdminPageController@dashboard')->name('dashboard');
+
+Route::get('/room','RoomController@roomfun')->name('roompage');
