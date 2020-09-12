@@ -23,7 +23,6 @@ Route::get('/testing',function($value='')
 	return 'This is a testing page!';
 });
 
+
 Route::get('/admin','AdminPageController@dashboard')->name('dashboard');
-
-
 
