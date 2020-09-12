@@ -32,3 +32,15 @@ Route::get('doctor','DoctorController@doctorfun')->name('doctorpage');
 
 Route::get('staff','StaffController@stafffun')->name('staffpage');
 
+Route::get('appointment','AppointmentController@appointmentfun')->name('appointmentpage');
+
+Route::get('payment','PaymentController@paymentfun')->name('paymentpage');
+
+Route::get('patient','PatientController@Patientfun')->name('patientpage');
+
+Route::get('patient_room','Patient_roomController@patient_roomfun')->name('patient_roompage');
+
+Route::get('bill','BillController@billfun')->name('billpage');
+
+//Route::get('patient','PatientController@Patientfun')->name('patientpage');
+

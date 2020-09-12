@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Schedule;
+use App\Patient_room;
 use Illuminate\Http\Request;
 
-class ScheduleController extends Controller
+class Patient_roomController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ScheduleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Schedule  $schedule
+     * @param  \App\Patient_room  $patient_room
      * @return \Illuminate\Http\Response
      */
-    public function show(Schedule $schedule)
+    public function show(Patient_room $patient_room)
     {
         //
     }
@@ -52,10 +52,10 @@ class ScheduleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Schedule  $schedule
+     * @param  \App\Patient_room  $patient_room
      * @return \Illuminate\Http\Response
      */
-    public function edit(Schedule $schedule)
+    public function edit(Patient_room $patient_room)
     {
         //
     }
@@ -64,10 +64,10 @@ class ScheduleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Schedule  $schedule
+     * @param  \App\Patient_room  $patient_room
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Schedule $schedule)
+    public function update(Request $request, Patient_room $patient_room)
     {
         //
     }
@@ -75,10 +75,10 @@ class ScheduleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Schedule  $schedule
+     * @param  \App\Patient_room  $patient_room
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Schedule $schedule)
+    public function destroy(Patient_room $patient_room)
     {
         //
     }
