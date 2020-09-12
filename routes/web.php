@@ -24,3 +24,6 @@ Route::get('/testing',function($value='')
 });
 
 Route::get('/admin','AdminPageController@dashboard')->name('dashboard');
+
+
+
