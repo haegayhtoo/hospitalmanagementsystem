@@ -23,6 +23,12 @@ Route::get('/testing',function($value='')
 	return 'This is a testing page!';
 });
 
+
 Route::get('/admin','AdminPageController@dashboard')->name('dashboard');
 
-Route::get('/room','RoomController@roomfun')->name('roompage');
+Route::get('room','RoomController@roomfun')->name('roompage');
+
+Route::get('doctor','DoctorController@doctorfun')->name('doctorpage');
+
+Route::get('staff','StaffController@stafffun')->name('staffpage');
+
