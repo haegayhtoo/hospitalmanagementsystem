@@ -27,11 +27,5 @@ Route::get('/testing',function($value='')
 Route::get('/admin','AdminPageController@dashboard')->name('dashboard');
 
 
-Route::get('room','RoomController@roomfun')->name('roompage');
 
-Route::get('doctor','DoctorController@doctorfun')->name('doctorpage');
-
-Route::get('staff','StaffController@stafffun')->name('staffpage');
-
-Route::get('schedule','ScheduleController@schedulefun')->name('schedulepage');
 
