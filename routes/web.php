@@ -29,24 +29,3 @@ Route::get('/admin','AdminPageController@dashboard')->name('dashboard');
 
 
 
-//Route::get('appointment','AppointmentController@appointmentfun')->name('appointmentpage');
-
-//Route::get('bill','BillController@billfun')->name('billpage');
-
- Route::get('doctor','DoctorController@doctorfun')->name('doctorpage');
-
- //Route::get('patient','PatientController@patientfun')->name('patientpage');
-
-
-//Route::get('patient_room','Patient_roomController@patient_roomfun')->name('patient_roompage');
-
- //Route::get('payment','PaymentController@paymentfun')->name('paymentpage');
-
-
- Route::get('room','RoomController@roomfun')->name('roompage');
-
- Route::get('schedule','ScheduleController@schedulefun')->name('schedulepage');
-
-Route::get('staff','StaffController@stafffun')->name('staffpage');
-
-
