@@ -30,6 +30,8 @@ Route::get('doctor','DoctorPageController@doctorfun')->name('doctorpage');
 
 Route::get('staff','StaffPageController@stafffun')->name('staffpage');
 
+Route::get('room','RoomPageController@roomfun')->name('roompage');
+
 Route::get('schedule','SchedulePageController@schedulefun')->name('schedulepage');
 
 
