@@ -14,7 +14,8 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        //
+        $doctors = Doctor::all();
+        return view('admin.doctors.index',compact('doctors'));
     }
 
     /**
@@ -24,7 +25,8 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        //
+        $doctors = Doctor::all();
+        return view('admin.doctors.create',compact('doctors'));
     }
 
     /**
@@ -35,7 +37,25 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([
+        "doctorname" => 'required',
+        "address" => 'required',
+        "phonenumber" => 'required',
+        "qualification" => 'required',
+        "gender" => 'required',
+
+    ]);
+
+        $doctor = new Doctor;
+
+        $doctor->doctor_name = $request->doctorname ;//input name//
+        $doctor->address = $request->address;
+        $doctor->phone_number = $request->phonenumber;
+        $doctor->qualification = $request->qualification;
+        $doctor->gender = $request->gender;
+        $doctor->save();
+
+        return redirect()->route('doctor.index');
     }
 
     /**
@@ -46,7 +66,7 @@ class DoctorController extends Controller
      */
     public function show(Doctor $doctor)
     {
-        //
+        return view('admin.doctors.detail',compact('doctor'));
     }
 
     /**
@@ -57,7 +77,8 @@ class DoctorController extends Controller
      */
     public function edit(Doctor $doctor)
     {
-        //
+       $doctors = Doctor::all();
+       return view('admin.doctors.edit',compact('doctors','doctor'));
     }
 
     /**
@@ -69,7 +90,24 @@ class DoctorController extends Controller
      */
     public function update(Request $request, Doctor $doctor)
     {
-        //
+         $request->validate([
+        "doctorname" => 'required',
+        "address" => 'required',
+        "phonenumber" => 'required',
+        "qualification" => 'required',
+        "gender" => 'required',
+
+    ]);
+
+
+        $doctor->doctor_name = $request->doctorname ;//input name//
+        $doctor->address = $request->address;
+        $doctor->phone_number = $request->phonenumber;
+        $doctor->qualification = $request->qualification;
+        $doctor->gender = $request->gender;
+        $doctor->save();
+
+        return redirect()->route('doctor.index');
     }
 
     /**
@@ -80,6 +118,7 @@ class DoctorController extends Controller
      */
     public function destroy(Doctor $doctor)
     {
-        //
+        $doctor->delete();
+        return redirect()->route('doctor.index');
     }
 }

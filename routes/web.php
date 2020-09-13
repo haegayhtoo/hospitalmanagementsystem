@@ -26,11 +26,18 @@ Route::get('/testing',function($value='')
 
 Route::get('/admin','AdminPageController@dashboard')->name('dashboard');
 
-Route::get('doctor','DoctorPageController@doctorfun')->name('doctorpage');
+//Route::get('doctor','DoctorController@doctorfun')->name('doctorpage');
 
-Route::get('staff','StaffPageController@stafffun')->name('staffpage');
+//Route::get('staff','StaffController@stafffun')->name('staffpage');
 
-Route::get('room','RoomPageController@roomfun')->name('roompage');
+//Route::get('room','RoomController@roomfun')->name('roompage');
 
-Route::get('schedule','SchedulePageController@schedulefun')->name('schedulepage');
+Route::get('schedule','ScheduleController@schedulefun')->name('schedulepage');
 
+
+//Backend
+Route::resource('room','RoomController');
+
+Route::resource('staff','StaffController');
+
+Route::resource('doctor','DoctorController');

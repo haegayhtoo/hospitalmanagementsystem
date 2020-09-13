@@ -14,8 +14,11 @@ class StaffController extends Controller
      */
     public function index()
     {
-        //
+         $staffs=Staff::all(); 
+        return view('admin.staffs.index',compact('staffs'));
     }
+
+     
 
     /**
      * Show the form for creating a new resource.
@@ -24,7 +27,8 @@ class StaffController extends Controller
      */
     public function create()
     {
-        //
+        $staffs = Staff::all();
+        return view('admin.staffs.create',compact('staffs'));
     }
 
     /**
@@ -35,51 +39,80 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+        "staffname" => 'required',
+        "phonenumber" => 'required',
+        "gender" => 'required',
+        "address" => 'required',
+    ]);
+        $staff = new Staff;
+
+        $staff->staff_name = $request->staffname ;//input name//
+        $staff->phone_number = $request->phonenumber;
+        $staff->gender = $request->gender;
+        $staff->address = $request->address;
+        $staff->save();
+
+        return redirect()->route('staff.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Staff  $staff
+     * @param  \App\Room  $room
      * @return \Illuminate\Http\Response
      */
     public function show(Staff $staff)
     {
-        //
+      return view('admin.staffs.detail',compact('staff'));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Staff  $staff
-     * @return \Illuminate\Http\Response
+     * @param  \App\Room  $room
+     * @return \Illuminate\Http\Response-
      */
     public function edit(Staff $staff)
     {
-        //
-    }
+       $staffs = Staff::all();
+       return view('admin.staffs.edit',compact('staffs','staff'));
+   }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Staff  $staff
+     * @param  \App\Room  $room
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Staff $staff)
     {
-        //
+          $request->validate([
+        "staffname" => 'required',
+        "phonenumber" => 'required',
+        "gender" => 'required',
+        "address" => 'required',
+    ]);
+        
+
+        $staff->staff_name = $request->staffname ;//input name//
+        $staff->phone_number = $request->phonenumber;
+        $staff->gender = $request->gender;
+        $staff->address = $request->address;
+        $staff->save();
+
+        return redirect()->route('staff.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Staff  $staff
+     * @param  \App\Room  $room
      * @return \Illuminate\Http\Response
      */
     public function destroy(Staff $staff)
     {
-        //
+         $staff->delete();
+        return redirect()->route('staff.index');
     }
 }
