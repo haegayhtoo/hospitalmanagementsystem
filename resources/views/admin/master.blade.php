@@ -66,15 +66,9 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-<<<<<<< HEAD
         <a class="nav-link" href="{{route('staff.index')}}">
           <i class="fas fa-fw fa-table"></i>
           <span>Staff</span></a>
-=======
-        <a class="nav-link" href="{{route('doctorpage')}}">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Doctor</span></a>
->>>>>>> bf4788304994c5f195636e435458b7854b92495f
       </li>
 
       <!-- Divider -->
