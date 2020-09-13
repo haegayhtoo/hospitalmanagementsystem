@@ -26,7 +26,11 @@ Route::get('/testing',function($value='')
 
 Route::get('/admin','AdminPageController@dashboard')->name('dashboard');
 
+
 //Route::get('doctor','DoctorController@doctorfun')->name('doctorpage');
+
+Route::get('doctor','DoctorController@doctorfun')->name('doctorpage');
+
 
 //Route::get('staff','StaffController@stafffun')->name('staffpage');
 
@@ -35,8 +39,18 @@ Route::get('/admin','AdminPageController@dashboard')->name('dashboard');
 Route::get('schedule','ScheduleController@schedulefun')->name('schedulepage');
 
 
+
 //Backend
 Route::resource('room','RoomController');
+
+Route::get('home','FrontendPageController@dashboard')->name('home');
+
+Route::get('page',function(){
+	return view('frontend.master');
+});
+
+
+
 
 Route::resource('staff','StaffController');
 
