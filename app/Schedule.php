@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Schedule extends Model
 {
-    protected $fillable = 
+      protected $fillable = 
    [
-        'doctor_id','date','time'
+        'doctor_id', 'date', 'time'
     ];
 }
