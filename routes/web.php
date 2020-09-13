@@ -34,5 +34,11 @@ Route::get('room','RoomPageController@roomfun')->name('roompage');
 
 Route::get('schedule','SchedulePageController@schedulefun')->name('schedulepage');
 
+Route::get('home','FrontendPageController@dashboard')->name('home');
+
+Route::get('page',function(){
+	return view('frontend.master');
+});
+
 
 
