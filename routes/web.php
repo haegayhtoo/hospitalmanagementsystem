@@ -50,6 +50,10 @@ Route::get('doctorlist','FrontendPageController@doctor')->name('doctor');
 
 Route::get('appointment','FrontendPageController@appointment')->name('appointment');
 
+Route::get('home','FrontendPageController@home')->name('home');
+Route::get('contact','FrontendPageController@contact')->name('contact');
+
+
 
 
 

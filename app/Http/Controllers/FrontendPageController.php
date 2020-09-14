@@ -20,4 +20,10 @@ class FrontendPageController extends Controller
     public function appointment(){
         return view('frontend.appointment');
     }
+    public function home(){
+        return view('frontend.home');
+    }
+     public function contact(){
+        return view('frontend.contact');
+    }
 }
