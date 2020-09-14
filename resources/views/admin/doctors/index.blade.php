@@ -36,7 +36,7 @@
                         <td>{{ $doctor->address}}</td>
                         <td>{{ $doctor->phone_number }}</td>
                         <td>{{ $doctor->qualification }}</td>
-                        <td>{{ $doctor->gender }}</td>doctor
+                        <td>{{ $doctor->gender }}</td>
                         <td>
                             <a href="{{route('doctor.show',$doctor->id)}}" class="btn btn-primary">Detail</a>
 
