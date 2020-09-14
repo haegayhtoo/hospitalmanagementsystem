@@ -14,13 +14,25 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-    		<form action="{{route('doctor.update',$doctor->id)}}" method="post" >
+    		<form action="{{route('doctor.update',$doctor->id)}}" method="post" enctype="multipart/form-data">
     			@csrf
                 @method('PUT')
                  <div class="form-group row ">
                    <label for="inputdoctorname" class="col-sm-2 col-form-label">Doctor Name</label>
                      <div class="col-sm-6">
                          <input type="text" name="doctorname" class="form-control" id="inputdoctorname" value="{{$doctor->doctor_name}}">                         
+                     </div>
+                </div>
+
+                 <div class="form-group row">
+                   <label for="inputphoto" class="col-sm-2 col-form-label">Photo</label>
+                     <div class="col-sm-6">
+                         <input type="file" name="photo" class="d-block" id="inputphoto" value="{{$doctor->photo}}">
+
+                          <img src="{{asset($doctor->photo)}}" class="img-fluid w-20">
+
+                         <input type="hidden" name="oldphoto" value="{{$doctor->photo}}">
+                      
                      </div>
                 </div>
 

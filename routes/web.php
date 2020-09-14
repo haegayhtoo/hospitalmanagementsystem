@@ -43,11 +43,14 @@ Route::get('schedule','ScheduleController@schedulefun')->name('schedulepage');
 //Backend
 Route::resource('room','RoomController');
 
-Route::get('home','FrontendPageController@dashboard')->name('home');
+Route::get('login','FrontendPageController@login')->name('login');
+Route::get('register','FrontendPageController@register')->name('register');
 
-Route::get('page',function(){
-	return view('frontend.master');
-});
+Route::get('doctorlist','FrontendPageController@doctor')->name('doctor');
+
+Route::get('appointment','FrontendPageController@appointment')->name('appointment');
+
+
 
 
 

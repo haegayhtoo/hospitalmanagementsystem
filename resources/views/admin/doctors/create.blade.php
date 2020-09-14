@@ -13,13 +13,21 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-    		<form action="{{route('doctor.store')}}" method="post" >
+    		<form action="{{route('doctor.store')}}" method="post" enctype="multipart/form-data">
     			@csrf
 
     			      <div class="form-group row ">
                    <label for="inputdoctorname" class="col-sm-2 col-form-label">Doctor Name</label>
                      <div class="col-sm-6">
                          <input type="text" name="doctorname" class="form-control" id="inputdoctorname">                         
+                     </div>
+                </div>
+
+                <div class="form-group row">
+                   <label for="inputphoto" class="col-sm-2 col-form-label">Photo</label>
+                     <div class="col-sm-6">
+                         <input type="file" name="photo" class="d-block" id="inputphoto">
+                      
                      </div>
                 </div>
 
