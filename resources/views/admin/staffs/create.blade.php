@@ -16,21 +16,21 @@
         <form action="{{route('staff.store')}}" method="post" >
           @csrf
 
-              <div class="form-group row ">
+              <div class="form-group row {{$errors->has('staffname')? 'has-error':''}}">
                    <label for="inputname" class="col-sm-2 col-form-label">Name</label>
                      <div class="col-sm-6">
-                         <input type="text" name="staffname" class="form-control" id="inputname" >                         
+                         <input type="text" name="staffname" class="form-control @error('title')is-invalid @enderror" id="inputname" > <span class="text-danger">{{$errors->first('staffname')}}</span>                        
                      </div>
                 </div>
 
-                <div class="form-group row ">
+                <div class="form-group row {{$errors->has('phonenumber')? 'has-error':''}}">
                    <label for="inputnumber" class="col-sm-2 col-form-label">Phone Number</label>
                      <div class="col-sm-6">
-                         <input type="text" name="phonenumber" class="form-control" id="inputnumber" >                       
+                         <input type="text" name="phonenumber" class="form-control @error('title')is-invalid @enderror" id="inputnumber" >   <span class="text-danger">{{$errors->first('phonenumber')}}</span>                    
                      </div>
                 </div>
 
-               <div class="form-group row ">
+               <div class="form-group row {{$errors->has('gender')? 'has-error':''}}">
                    <label for="inputgender" class="col-sm-2 col-form-label" >Gender</label>
                   <div class="col-md-6">
                     <div class="form-check">
@@ -50,10 +50,11 @@
               </div>
               
               
-              <div class="form-group row ">
+              <div class="form-group row {{$errors->has('address')? 'has-error':''}}">
                       <label for="address" class="col-sm-2 col-form-label">Address</label>
                       <div class="col-sm-6">
-                      <textarea class="form-control" name="address"></textarea>
+                      <textarea class="form-control @error('title')is-invalid @enderror" name="address"></textarea>
+                      <span class="text-danger">{{$errors->first('address')}}</span>
                     </div>
                 </div>
                 

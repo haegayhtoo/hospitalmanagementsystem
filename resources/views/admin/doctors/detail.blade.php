@@ -18,6 +18,7 @@
          		
                 <div class="col-md-6">
                     <p>Doctor Name: &nbsp; &nbsp; &nbsp;{{$doctor->doctor_name}}</p>
+                    <p>Photo: &nbsp; &nbsp; &nbsp;{{$doctor->photo}}</p>
                     <p>Address:  &nbsp; &nbsp; &nbsp;{{$doctor->address}}</p>
                     <p>Phone Number:  &nbsp; &nbsp; &nbsp;{{$doctor->phone_number}}</p>
                     <p>Qualification:  &nbsp; &nbsp; &nbsp;{{$doctor->qualification}}</p>

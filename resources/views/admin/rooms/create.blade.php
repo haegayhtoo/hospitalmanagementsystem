@@ -16,24 +16,24 @@
     		<form action="{{route('room.store')}}" method="post" >
     			@csrf
 
-    			<div class="form-group row ">
+    			<div class="form-group row {{$errors->has('roomno')? 'has-error':''}}">
                    <label for="inputroomno" class="col-sm-2 col-form-label">Room No</label>
                      <div class="col-sm-6">
-                         <input type="number" name="roomno" class="form-control" id="inputroomno">                         
+                         <input type="number" name="roomno" class="form-control @error('title')is-invalid @enderror" id="inputroomno"> <span class="text-danger">{{$errors->first('roomno')}}</span>                        
                      </div>
                 </div>
 
-                <div class="form-group row ">
+                <div class="form-group row {{$errors->has('roomtype')? 'has-error':''}}">
                    <label for="inputroomtype" class="col-sm-2 col-form-label">Room Type</label>
                      <div class="col-sm-6">
-                         <input type="text" name="roomtype" class="form-control" id="inputroomtype">                       
+                         <input type="text" name="roomtype" class="form-control @error('title')is-invalid @enderror" id="inputroomtype">   <span class="text-danger">{{$errors->first('roomtype')}}</span>                    
                      </div>
                 </div>
 
-                <div class="form-group row ">
+                <div class="form-group row {{$errors->has('dailycharges')? 'has-error':''}}">
                    <label for="inputdailycharges" class="col-sm-2 col-form-label">Daily Charges</label>
                      <div class="col-sm-6">
-                         <input type="number" name="dailycharges" class="form-control" id="inputdailycharges">                        
+                         <input type="number" name="dailycharges" class="form-control @error('title')is-invalid @enderror" id="inputdailycharges">    <span class="text-danger">{{$errors->first('dailycharges')}}</span>                    
                      </div>
                 </div>
                 

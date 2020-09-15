@@ -39,16 +39,21 @@ class DoctorController extends Controller
     {
          $request->validate([
         "doctorname" => 'required',
+        "photo" => 'required|image',
         "address" => 'required',
         "phonenumber" => 'required',
         "qualification" => 'required',
         "gender" => 'required',
 
     ]);
+        $imageName = time().'.'.$request->photo->extension();
+        $request->photo->move(public_path('frontend/doctorimg'),$imageName);
+        $path = 'frontend/doctorimg/'.$imageName;
 
         $doctor = new Doctor;
 
         $doctor->doctor_name = $request->doctorname ;//input name//
+       $doctor->photo = $path;
         $doctor->address = $request->address;
         $doctor->phone_number = $request->phonenumber;
         $doctor->qualification = $request->qualification;
@@ -92,20 +97,31 @@ class DoctorController extends Controller
     {
          $request->validate([
         "doctorname" => 'required',
+        "photo" => 'sometimes',
         "address" => 'required',
         "phonenumber" => 'required',
         "qualification" => 'required',
         "gender" => 'required',
 
     ]);
+        if($request->hasFile('photo')){
+           $imageName = time().'.'.$request->photo->extension();
+           $request->photo->move(public_path('frontend/doctorimg'),$imageName);
+           $path = 'frontend/doctorimg/'.$imageName;
+        }else{
+           $path= $request->oldphoto;
+       }
 
+        
 
         $doctor->doctor_name = $request->doctorname ;//input name//
+        $doctor->photo = $path;
         $doctor->address = $request->address;
         $doctor->phone_number = $request->phonenumber;
         $doctor->qualification = $request->qualification;
         $doctor->gender = $request->gender;
         $doctor->save();
+
 
         return redirect()->route('doctor.index');
     }
