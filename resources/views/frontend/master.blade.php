@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{asset ('frontend/css/style.css')}}">
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-  	<div class="py-1 bg-black top">
+  	<div class="py-1 ">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
 	    		<div class="col-lg-12 d-block">
@@ -36,9 +36,35 @@
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
 						    <span class="text">youremail@email.com</span>
 					    </div>
+
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
-						    <p class="mb-0 register-link"><a href="#" class="mr-3">Sign Up</a><a href="#">Sign In</a></p>
+						    {{-- <p class="mb-0 register-link"><a href="#" class="mr-3">Sign Up</a><a href="#">Sign In</a></p> --}}
+
+                @guest
+                           @if (Route::has('register'))
+                    
+                               <a class="text-decoration-none float-right loginLink" href="{{ route('register') }}"> Sign-up</a>
+                           @endif
+                               <a href="{{route('loginform')}}" class="d-xl-block d-lg-block d-md-block d-none text-decoration-none loginLink float-right">| Login&nbsp;</a>           
+                           @else
+                               <a style="color: #EC7094;" id="navbarDropdown" class="d-xl-block d-lg-block d-md-block d-none  text-decoration-none float-right dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                               {{ Auth::user()->name }}</a>
+                         
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                               <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                         {{ __('Logout') }}
+                               </a>
+
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                              @csrf
+                             </form>
+                            </div>
+                        @endguest
 					    </div>
+
+              
+
 				    </div>
 			    </div>
 		    </div>
@@ -53,10 +79,17 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav nav ml-auto">
+<<<<<<< HEAD
 	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 	          <li class="nav-item"><a href="#doctor-section" class="nav-link"><span>Doctors</span></a></li>
 	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 	          <li class="nav-item cta mr-md-2"><a href="#" class="nav-link">Appointment</a></li>
+=======
+	          <li class="nav-item"><a href="{{route('index')}}" class="nav-link"><span>Home</span></a></li>
+	          <li class="nav-item"><a href="{{route('doctor')}}" class="nav-link"><span>Doctors</span></a></li>
+	          <li class="nav-item"><a href="{{route('contact')}}" class="nav-link"><span>Contact</span></a></li>
+	          <li class="nav-item cta mr-md-2"><a href="{{route('appointment')}}" class="nav-link">Appointment</a></li>
+>>>>>>> 020f2fb7a55c23fa4e8dafe04f8a664e503323bc
 	        </ul>
 	      </div>
 	    </div>
@@ -71,9 +104,9 @@
         <div class="row">
           <div class="col-md-12 text-center">
   
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">SPNM</a>
+  </p>
           </div>
         </div>
       </div>
@@ -104,6 +137,8 @@
   <script src="{{asset ('frontend/js/google-map.js')}}"></script>
   
   <script src="{{asset ('frontend/js/main.js')}}"></script>
+    
+  <script type="text/javascript" src="{{asset('frontend/js/localstorage_custom.js')}}"></script>
     
   </body>
 </html>

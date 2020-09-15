@@ -71,6 +71,18 @@
           <span>Staff</span></a>
       </li>
 
+       <li class="nav-item">
+        <a class="nav-link" href="{{route('patient.index')}}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Patient</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('schedule.index')}}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Schedule</span></a>
+      </li>
+
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 

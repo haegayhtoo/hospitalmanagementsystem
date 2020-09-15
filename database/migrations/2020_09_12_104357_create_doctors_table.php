@@ -18,8 +18,8 @@ class CreateDoctorsTable extends Migration
             $table->string('doctor_name');
             $table->text('photo');
             $table->string('address');
-             $table->string('phone_number');
-             $table->string('qualification');
+            $table->string('phone_number');
+            $table->string('qualification');
             $table->string('gender'); 
             $table->timestamps();
         });

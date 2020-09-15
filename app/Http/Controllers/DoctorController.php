@@ -39,7 +39,7 @@ class DoctorController extends Controller
     {
          $request->validate([
         "doctorname" => 'required',
-        "photo" => 'required',
+        "photo" => 'required|image',
         "address" => 'required',
         "phonenumber" => 'required',
         "qualification" => 'required',

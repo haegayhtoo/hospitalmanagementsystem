@@ -14,7 +14,8 @@ class ScheduleController extends Controller
      */
     public function index()
     {
-        //
+        $schedules=Schedule::all(); 
+        return view('admin.schedules.index',compact('schedules'));
     }
 
     /**
@@ -24,7 +25,8 @@ class ScheduleController extends Controller
      */
     public function create()
     {
-        //
+         $schedules = Schedule::all();
+        return view('admin.schedules.create',compact('schedules'));
     }
 
     /**
@@ -35,7 +37,21 @@ class ScheduleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+        "doctorid" => 'required',
+        "scheduledate" => 'required',
+        "scheduletime" => 'required',
+        
+    ]);
+        $schedule = new Schedule;
+       
+        $schedule->doctor_id = $request->doctorid;
+         $schedule->date = $request->scheduledate;
+        $schedule->time = $request->scheduletime;
+
+        $schedule->save();
+
+        return redirect()->route('schedule.index');
     }
 
     /**
@@ -46,8 +62,9 @@ class ScheduleController extends Controller
      */
     public function show(Schedule $schedule)
     {
-        //
+         return view('admin.schedules.detail',compact('schedule'));
     }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -57,7 +74,9 @@ class ScheduleController extends Controller
      */
     public function edit(Schedule $schedule)
     {
-        //
+        
+        $schedules = Schedule::all();
+       return view('admin.schedules.edit',compact('schedules','schedule'));
     }
 
     /**
@@ -69,7 +88,20 @@ class ScheduleController extends Controller
      */
     public function update(Request $request, Schedule $schedule)
     {
-        //
+         $request->validate([
+        "doctorid" => 'required',
+        "scheduledate" => 'required',
+        "scheduletime" => 'required',
+        
+    ]);
+        
+        $schedule->doctor_id = $request->doctorid;
+         $schedule->date = $request->scheduledate;
+        $schedule->time = $request->scheduletime;
+
+        $schedule->save();
+
+        return redirect()->route('schedule.index');
     }
 
     /**
@@ -80,6 +112,7 @@ class ScheduleController extends Controller
      */
     public function destroy(Schedule $schedule)
     {
-        //
+        $schedule->delete();
+        return redirect()->route('schedule.index');
     }
 }

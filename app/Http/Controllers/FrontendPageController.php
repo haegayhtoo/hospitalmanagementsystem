@@ -7,6 +7,9 @@ use App\Doctor;
 
 class FrontendPageController extends Controller
 {
+    public function mainfun($value=''){
+        return view('frontend.index');
+    }
     public function login(){
         return view('frontend.login');
     }
@@ -20,8 +23,8 @@ class FrontendPageController extends Controller
     public function appointment(){
         return view('frontend.appointment');
     }
-    public function home(){
-        return view('frontend.home');
+    public function index(){
+        return view('frontend.index');
     }
      public function contact(){
         return view('frontend.contact');

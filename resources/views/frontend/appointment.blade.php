@@ -2,21 +2,23 @@
 @section('content')
 <div class="jumbotron jumbotron-fluid subtitle">
       
-  </div>
+</div>
   
 <div class="container-fluid">
-
 <div class="container">
-    <div class="row">
+    <div class="row ">
+      
         <div class="col-md-12">
+           <form method="post" action="{{route('appointments.store')}}">
+            @csrf
               <div class="form-group row ">
                    <label for="inputname" class="col-sm-2 col-form-label">Name</label>
                      <div class="col-sm-6">
                          <input type="text" name="appointmentname" class="form-control" id="inputname" >                    
                      </div>
-                </div>
+              </div>
                 
-                <div class="form-group row ">
+              <div class="form-group row ">
                    <label for="inputgender" class="col-sm-2 col-form-label" >Gender</label>
                   <div class="col-md-6">
                     <div class="form-check">
@@ -35,12 +37,12 @@
                   </div>
               </div>
               
-                <div class="form-group row ">
+              <div class="form-group row ">
                    <label for="inputnumber" class="col-sm-2 col-form-label">Phone Number</label>
                      <div class="col-sm-6">
-                         <input type="text" name="phonenumber" class="form-control" id="inputnumber" >                       
+                         <input type="number" name="phonenumber" class="form-control" id="inputnumber" >                       
                      </div>
-                </div>
+              </div>
 
 
               <div class="form-group row ">
@@ -48,21 +50,21 @@
                      <div class="col-sm-6">
                          <input type="date" name="date" class="form-control" id="inputdate" >                       
                      </div>
-                </div>
+              </div>
 
               <div class="form-group row ">
                       <label for="address" class="col-sm-2 col-form-label">Address</label>
                       <div class="col-sm-6">
                       <textarea class="form-control" name="address"></textarea>
-                    </div>
-                </div>
+                      </div>
+              </div>
                 
-                <div class="form-group row ">
+              <div class="form-group row ">
                    <label for="inputdoctorname" class="col-sm-2 col-form-label">Doctor Name</label>
                      <div class="col-sm-6">
                          <input type="text" name="doctorname" class="form-control" id="inputdoctorname">                   
                      </div>
-                </div>
+              </div>
                 
                 <div class="form-group row ">
                    <label for="inputpatientid" class="col-sm-2 col-form-label">Padient ID</label>
@@ -87,19 +89,17 @@
 
                 <div class="form-group row">
                   <div class="col-sm-1">
-                    <input type="submit" value="Confirm" class="btn btn-success ">
-                    {{-- <form method="post" action="{{route('appointment.store')}}" >
-                               <input type="submit" value="Confirm" class="btn btn-success ">
-                            </form> --}}
+                    
+                    <input type="submit" value="Save" class="btn btn-info confirmbtn">
                   </div>
 
-                  <div class="col-sm-1">
-                     <input type="submit" value="Cancel" class="btn btn-success ">
-                  </div>
-                </div>
-
-            </form>
+                 {{--  <div class="col-sm-1">
+                     <a href="{{route('index')}}" class="btn btn-info">Cancel</a><br><br>
+                  </div> --}}
+    
+            
         </div>
+
     </div>
 </div>
 </div>

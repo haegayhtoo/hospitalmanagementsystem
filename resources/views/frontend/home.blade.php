@@ -65,8 +65,8 @@
     								<div class="icon">
     									<span class="flaticon-stethoscope"></span>
     								</div>
-    								<h3><a href="#">Opthalmology</a></h3>
-    								
+    								<h3><a href="#">Haematology</a></h3>
+    								<p>Haematology services work closely with the hospital laboratory. These doctors treat blood diseases and malignancies linked to the blood, with both new referrals and emergency admissions being seen.</p>
     							</div>
     						</div>
     						<div class="department-wrap p-4 ftco-animate">
