@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Mediplus - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Hospital Management System</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -46,7 +46,7 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Mediplus</a>
+	      <a class="navbar-brand" href="index.html">Hospital Management System</a>
 	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -56,7 +56,7 @@
 	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 	          <li class="nav-item"><a href="#doctor-section" class="nav-link"><span>Doctors</span></a></li>
 	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	          <li class="nav-item cta mr-md-2"><a href="appointment.html" class="nav-link">Appointment</a></li>
+	          <li class="nav-item cta mr-md-2"><a href="#" class="nav-link">Appointment</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -64,9 +64,9 @@
 	  
     @yield('content')
 
-    <footer class="ftco-footer ftco-section">
+    <footer style="background-color:purple">
       
-      <div class="container-fluid px-md-5">
+      <div class="container-fluid">
         
         <div class="row">
           <div class="col-md-12 text-center">
