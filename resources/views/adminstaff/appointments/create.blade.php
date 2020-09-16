@@ -75,6 +75,14 @@
                          <span class="text-danger">{{$errors->first('doctorname')}}</span>                  
                      </div>
                 </div>
+
+                <div class="form-group row {{$errors->has('statusid')? 'has-error':''}}">
+                   <label for="inputstatusid" class="col-sm-2 col-form-label">Status ID</label>
+                     <div class="col-sm-6">
+                         <input type="number" name="statusid" class="form-control @error('title')is-invalid @enderror" id="inputstatusid"> 
+                         <span class="text-danger">{{$errors->first('statusid')}}</span>                     
+                     </div>
+                </div>
                 
                 <div class="form-group row {{$errors->has('patientid')? 'has-error':''}}">
                    <label for="inputpatientid" class="col-sm-2 col-form-label">Patient ID</label>

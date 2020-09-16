@@ -67,6 +67,13 @@
               </div>
                 
                 <div class="form-group row ">
+                   <label for="inputstatusid" class="col-sm-2 col-form-label">Status ID</label>
+                     <div class="col-sm-6">
+                         <input type="number" name="statusid" class="form-control" id="inputstatusid">                   
+                     </div>
+                </div>
+
+                <div class="form-group row ">
                    <label for="inputpatientid" class="col-sm-2 col-form-label">Padient ID</label>
                      <div class="col-sm-6">
                          <input type="number" name="patientid" class="form-control" id="inputpatientid">                   

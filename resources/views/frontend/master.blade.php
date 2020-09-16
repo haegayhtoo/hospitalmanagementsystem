@@ -61,6 +61,7 @@
                              </form>
                             </div>
                         @endguest
+                        
 					    </div>
 
               
@@ -79,17 +80,10 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav nav ml-auto">
-<<<<<<< HEAD
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#doctor-section" class="nav-link"><span>Doctors</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	          <li class="nav-item cta mr-md-2"><a href="#" class="nav-link">Appointment</a></li>
-=======
 	          <li class="nav-item"><a href="{{route('index')}}" class="nav-link"><span>Home</span></a></li>
 	          <li class="nav-item"><a href="{{route('doctor')}}" class="nav-link"><span>Doctors</span></a></li>
 	          <li class="nav-item"><a href="{{route('contact')}}" class="nav-link"><span>Contact</span></a></li>
 	          <li class="nav-item cta mr-md-2"><a href="{{route('appointment')}}" class="nav-link">Appointment</a></li>
->>>>>>> 020f2fb7a55c23fa4e8dafe04f8a664e503323bc
 	        </ul>
 	      </div>
 	    </div>

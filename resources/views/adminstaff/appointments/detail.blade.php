@@ -23,6 +23,7 @@
                     <p>Date of Birth:  &nbsp; &nbsp; &nbsp;{{$appointment->date_of_birth}}</p>
                      <p>Address: &nbsp; &nbsp; &nbsp;{{$appointment->address}}</p>
                     <p>Doctor Name:  &nbsp; &nbsp; &nbsp;{{$appointment->doctor_name}}</p>
+                     <p>Patient ID:  &nbsp; &nbsp; &nbsp;{{$appointment->status_id}}</p>
                     <p>Patient ID:  &nbsp; &nbsp; &nbsp;{{$appointment->patient_id}}</p>
                     <p>Schedule ID:  &nbsp; &nbsp; &nbsp;{{$appointment->schedule_id}}</p>
                     <p>Staff ID:  &nbsp; &nbsp; &nbsp;{{$appointment->staff_id}}</p>

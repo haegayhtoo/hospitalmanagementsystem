@@ -47,6 +47,7 @@ class AppointmentController extends Controller
         "date" => 'required',
         "address" => 'required',
         "doctorname" => 'required',
+        "statusid" => 'required',
         "patientid" => 'required',
         "scheduleid" => 'required',
         "staffid" => 'required',
@@ -59,6 +60,7 @@ class AppointmentController extends Controller
         $appointment->date_of_birth = $request->date;
         $appointment->address = $request->address ;
         $appointment->doctor_name = $request->doctorname;
+        $appointment->status_id = $request->statusid;
         $appointment->patient_id = $request->patientid;
         $appointment->schedule_id = $request->scheduleid;
         $appointment->staff_id = $request->staffid;
@@ -106,6 +108,7 @@ class AppointmentController extends Controller
         "date" => 'required',
         "address" => 'required',
         "doctorname" => 'required',
+        "statusid" => 'required',
         "patientid" => 'required',
         "scheduleid" => 'required',
         "staffid" => 'required',
@@ -118,6 +121,7 @@ class AppointmentController extends Controller
         $appointment->date_of_birth = $request->date;
         $appointment->address = $request->address ;
         $appointment->doctor_name = $request->doctorname;
+        $appointment->status_id = $request->statusid;
         $appointment->patient_id = $request->patientid;
         $appointment->schedule_id = $request->scheduleid;
         $appointment->staff_id = $request->staffid;
