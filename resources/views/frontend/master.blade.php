@@ -43,7 +43,7 @@
                 @guest
                            @if (Route::has('register'))
                     
-                               <a class="text-decoration-none float-right loginLink" href="{{ route('register') }}"> Sign-up</a>
+                               <a class="text-decoration-none float-right loginLink" href="{{ route('registerform') }}"> Sign-up</a>
                            @endif
                                <a href="{{route('loginform')}}" class="d-xl-block d-lg-block d-md-block d-none text-decoration-none loginLink float-right">| Login&nbsp;</a>           
                            @else

@@ -19,11 +19,11 @@
                     <tr>
                         <th>No</th>
                         <th>Doctor Name</th>
-                        <th>Photo</th>
+                        {{-- <th>Photo</th> --}}
                         <th>Address</th>
                         <th>Phone Number</th>
                         <th>Qualification</th>
-                        <th>Gender</th>
+                        {{-- <th>Gender</th> --}}
                         <th>Action</th>
 
                     </tr>
@@ -34,15 +34,15 @@
                     <tr>
                         <td>{{ $i++ }}</td>
                         <td>{{ $doctor->doctor_name}}</td>
-                        <td><img src="{{asset($doctor->photo)}}" class="img-fluid w-20"></td>
+                        {{-- <td><img src="{{asset($doctor->photo)}}" class="img-fluid w-20"></td> --}}
                         <td>{{ $doctor->address}}</td>
                         <td>{{ $doctor->phone_number }}</td>
                         <td>{{ $doctor->qualification }}</td>
-                        <td>{{ $doctor->gender }}</td>
+                        {{-- <td>{{ $doctor->gender }}</td> --}}
                         <td>
-                            <a href="{{route('doctor.show',$doctor->id)}}" class="btn btn-primary">Detail</a><br><br>
+                            <a href="{{route('doctor.show',$doctor->id)}}" class="btn btn-primary">Detail</a><br>
 
-                             <a href="{{route('doctor.edit',$doctor->id)}}" class="btn btn-info">Edit</a><br><br>
+                             <a href="{{route('doctor.edit',$doctor->id)}}" class="btn btn-info">Edit</a><br>
                              
                             <form method="post" action="{{route('doctor.destroy',$doctor->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                                 @csrf
