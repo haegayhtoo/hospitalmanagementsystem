@@ -17,8 +17,8 @@ class CreateSchedulesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('doctor_id');
             $table->date('date');
-            $table->time('time');
-            
+            $table->time('start_time');
+            $table->time('end_time');
 
             $table->foreign('doctor_id')
                   ->references('id')
