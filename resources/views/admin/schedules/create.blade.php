@@ -32,11 +32,19 @@
                 </div>
 
                
-              <div class="form-group row {{$errors->has('scheduletime')? 'has-error':''}}">
-                   <label for="inputtime" class="col-sm-2 col-form-label">Time</label>
+              <div class="form-group row {{$errors->has('starttime')? 'has-error':''}}">
+                   <label for="inputtime" class="col-sm-2 col-form-label">Start Time</label>
                      <div class="col-sm-6">
-                         <input type="time" name="scheduletime" class="form-control @error('title')is-invalid @enderror" id="inputtime" >  
-                         <span class="text-danger">{{$errors->first('scheduletime')}}</span>                     
+                         <input type="time" name="starttime" class="form-control @error('title')is-invalid @enderror" id="inputtime" >  
+                         <span class="text-danger">{{$errors->first('starttime')}}</span>                     
+                     </div>
+                </div>
+
+                <div class="form-group row {{$errors->has('endtime')? 'has-error':''}}">
+                   <label for="inputtime" class="col-sm-2 col-form-label">End Time</label>
+                     <div class="col-sm-6">
+                         <input type="time" name="endtime" class="form-control @error('title')is-invalid @enderror" id="inputtime" >  
+                         <span class="text-danger">{{$errors->first('endtime')}}</span>                     
                      </div>
                 </div>
               

@@ -20,7 +20,8 @@
                         <th>No</th>
                         <th>Doctor ID</th>
                         <th>Date</th>
-                        <th>Time</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
                         
                         <th>Action</th>
 
@@ -32,11 +33,13 @@
                     <tr>
                         <td>{{ $i++ }}</td>
                         <td>{{ $schedule->doctor_id}}</td>
-                        <td>{{ $schedule->date}}</td>
-                        <td>{{ $schedule->time }}</td>
+                        <td>{{$schedule->date}}</td>
+                        <td>{{ $schedule->start_time}}</td>
+                        <td>{{ $schedule->end_time}}</td>
+                        
                         
                         <td>
-                            <a href="{{route('schedule.show',$schedule->id)}}" class="btn btn-primary">Detail</a>
+                            {{-- <a href="{{route('schedule.show',$schedule->id)}}" class="btn btn-primary">Detail</a> --}}
 
                              <a href="{{route('schedule.edit',$schedule->id)}}" class="btn btn-info">Edit</a>
                              

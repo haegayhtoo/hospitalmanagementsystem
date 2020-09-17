@@ -10,4 +10,8 @@ class Doctor extends Model
    [
         'doctor_name', 'photo' ,'address', 'phone_number','qualification','gender'
     ];
+
+    public function schedule(){
+    return $this->hasMany('App\Schedule');
+    }
 }

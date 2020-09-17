@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Schedule;
 use Illuminate\Http\Request;
+use App\Doctor;
 
 class ScheduleController extends Controller
 {
@@ -16,6 +17,7 @@ class ScheduleController extends Controller
     {
         $schedules=Schedule::all(); 
         return view('admin.schedules.index',compact('schedules'));
+        return view('admin.schedules.index',compact('doctor'));
     }
 
     /**
@@ -40,14 +42,15 @@ class ScheduleController extends Controller
         $request->validate([
         "doctorid" => 'required',
         "scheduledate" => 'required',
-        "scheduletime" => 'required',
-        
+        "starttime" => 'required',
+        "endtime" => 'required',
     ]);
         $schedule = new Schedule;
        
         $schedule->doctor_id = $request->doctorid;
          $schedule->date = $request->scheduledate;
-        $schedule->time = $request->scheduletime;
+        $schedule->start_time = $request->starttime;
+        $schedule->end_time = $request->endtime;
 
         $schedule->save();
 
@@ -62,6 +65,7 @@ class ScheduleController extends Controller
      */
     public function show(Schedule $schedule)
     {
+        $doctors=Doctor::all();
          return view('admin.schedules.detail',compact('schedule'));
     }
     
@@ -88,16 +92,18 @@ class ScheduleController extends Controller
      */
     public function update(Request $request, Schedule $schedule)
     {
-         $request->validate([
+        $request->validate([
         "doctorid" => 'required',
         "scheduledate" => 'required',
-        "scheduletime" => 'required',
-        
+        "starttime" => 'required',
+        "endtime" => 'required',
     ]);
         
+       
         $schedule->doctor_id = $request->doctorid;
          $schedule->date = $request->scheduledate;
-        $schedule->time = $request->scheduletime;
+        $schedule->start_time = $request->starttime;
+        $schedule->end_time = $request->endtime;
 
         $schedule->save();
 

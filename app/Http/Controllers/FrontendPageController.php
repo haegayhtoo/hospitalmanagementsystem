@@ -21,7 +21,8 @@ class FrontendPageController extends Controller
         return view('frontend.doctor',compact('doctors'));
     }
     public function appointment(){
-        return view('frontend.appointment');
+        $doctors=Doctor::all();
+        return view('frontend.appointment',compact('doctors'));
     }
     public function index(){
         return view('frontend.index');
