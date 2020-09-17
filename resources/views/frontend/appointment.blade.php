@@ -71,7 +71,7 @@
                      <div class="col-sm-6">
                          {{-- <input type="text" name="doctorname" class="form-control" id="inputdoctorname"> --}} 
                          <div class="form-group row">
-                            <select class="form-control form-control-md" id="inputDoctor" name=" doctor">
+                            <select class="form-control form-control-md" id="inputDoctor" name="doctor">
                              
                                 <option>Choose Doctor</option>
                               @foreach($doctors as $doctor)
@@ -80,9 +80,6 @@
                               </option>
                              
                               @endforeach
-
-                              
-                          
                             </select>
                             <input class="form-control form-control-md" type="text" name="date" value="" id="date" readonly="readonly" >
                           </div> 
