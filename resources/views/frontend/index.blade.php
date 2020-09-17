@@ -79,7 +79,7 @@
     								<h3><a href="#">Neurology</a></h3>
     								<p>This unit deals with disorders of the nervous system, including the brain and spinal cord. It's run by doctors who specialise in this area (neurologists) and their staff.
 
-There are also paediatric neurologists who treat children. Neurologists may also be involved in clinical.</p>
+                                    There are also paediatric neurologists who treat children. Neurologists may also be involved in clinical.</p>
     							</div>
     						</div>
     						<div class="department-wrap p-4 ftco-animate">
