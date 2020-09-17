@@ -47,7 +47,7 @@
                         
                         <td>
                         
-                        <a href="" class="btn btn-primary">Confirm</a>
+                        <a href="" class="btn btn-primary">Confirm</a><br>
 
                          <a href="" class="btn btn-success">Cancel</a>
                             

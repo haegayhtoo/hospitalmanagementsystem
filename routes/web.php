@@ -98,6 +98,8 @@ Route::resource('schedule','ScheduleController');
 
 Route::resource('appointments','AppointmentController');
 
+Route::resource('contacts','ContactController');
+
 Auth::routes();
 
 Route::get('loginform','FrontendPageController@login')->name('loginform');

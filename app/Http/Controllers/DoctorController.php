@@ -43,7 +43,7 @@ class DoctorController extends Controller
         "address" => 'required',
         "phonenumber" => 'required',
         "qualification" => 'required',
-        "gender" => 'required',
+       "gender" => 'required',
 
     ]);
         $imageName = time().'.'.$request->photo->extension();
@@ -57,7 +57,7 @@ class DoctorController extends Controller
         $doctor->address = $request->address;
         $doctor->phone_number = $request->phonenumber;
         $doctor->qualification = $request->qualification;
-        $doctor->gender = $request->gender;
+       $doctor->gender = $request->gender;
         $doctor->save();
 
         return redirect()->route('doctor.index');
@@ -115,11 +115,11 @@ class DoctorController extends Controller
         
 
         $doctor->doctor_name = $request->doctorname ;//input name//
-        $doctor->photo = $path;
+       $doctor->photo = $path;
         $doctor->address = $request->address;
         $doctor->phone_number = $request->phonenumber;
         $doctor->qualification = $request->qualification;
-        $doctor->gender = $request->gender;
+       $doctor->gender = $request->gender;
         $doctor->save();
 
 
