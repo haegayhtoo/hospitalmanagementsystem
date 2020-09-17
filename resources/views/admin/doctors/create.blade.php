@@ -23,14 +23,14 @@
                      </div>
                 </div>
 
-                {{-- <div class="form-group row {{$errors->has('photo')? 'has-error':''}}">
+                <div class="form-group row {{$errors->has('photo')? 'has-error':''}}">
                    <label for="inputphoto" class="col-sm-2 col-form-label">Photo</label>
                      <div class="col-sm-6">
                          <input type="file" name="photo" class="d-block" id="inputphoto">
                          <span class="text-danger">{{$errors->first('photo')}}</span>
                      </div>
                 </div>
- --}}
+
                 <div class="form-group row {{$errors->has('address')? 'has-error':''}}">
                       <label for="address" class="col-sm-2 col-form-label">Address</label>
                       <div class="col-sm-6">
@@ -56,7 +56,7 @@
                 </div>
                 
 
-               {{-- <div class="form-group row {{$errors->has('gender')? 'has-error':''}}">
+               <div class="form-group row {{$errors->has('gender')? 'has-error':''}}">
                    <label for="inputgender" class="col-sm-2 col-form-label" >Gender</label>
                   <div class="col-md-6">
                     <div class="form-check">
@@ -73,7 +73,7 @@
                       </label>
                     </div>
                   </div>
-                </div> --}}
+                </div>
               
               
                 <div class="form-group row">
