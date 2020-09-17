@@ -36,7 +36,7 @@
                         <td>{{ $schedule->time }}</td>
                         
                         <td>
-                            <a href="{{route('schedule.show',$schedule->id)}}" class="btn btn-primary">Detail</a>
+                            {{-- <a href="{{route('schedule.show',$schedule->id)}}" class="btn btn-primary">Detail</a> --}}
 
                              <a href="{{route('schedule.edit',$schedule->id)}}" class="btn btn-info">Edit</a>
                              

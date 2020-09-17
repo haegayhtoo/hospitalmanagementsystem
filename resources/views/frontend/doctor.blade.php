@@ -2,10 +2,11 @@
 @section('content')
 <div class="jumbotron jumbotron-fluid subtitle">
     
-  </div>
+ </div>
 
 
 <div class="container mt-5">
+	
 	<div class="row">
 
 		@foreach($doctors as $doctor)

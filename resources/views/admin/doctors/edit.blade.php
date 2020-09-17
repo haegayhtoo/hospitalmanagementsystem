@@ -24,7 +24,7 @@
                      </div>
                 </div>
 
-                 {{-- <div class="form-group row">
+                 <div class="form-group row">
                    <label for="inputphoto" class="col-sm-2 col-form-label">Photo</label>
                      <div class="col-sm-6">
                          <input type="file" name="photo" class="d-block" id="inputphoto" value="{{$doctor->photo}}">
@@ -34,7 +34,7 @@
                          <input type="hidden" name="oldphoto" value="{{$doctor->photo}}">
                       
                      </div>
-                  </div> --}}
+                  </div>
 
                 <div class="form-group row ">
                       <label for="address" class="col-sm-2 col-form-label">Address</label>
@@ -59,7 +59,7 @@
                 </div>
                 
 
-               {{--  <div class="form-group row ">
+                <div class="form-group row ">
                    <label for="inputgender" class="col-sm-2 col-form-label" value="{{$doctor->gender}}">Gender</label>
                   <div class="col-md-6">
                     <div class="form-check">
@@ -76,7 +76,7 @@
                       </label>
                     </div>
                   </div>
-                </div> --}}
+                </div>
                 
                
                 <div class="form-group row">

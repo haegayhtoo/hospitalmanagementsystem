@@ -53,7 +53,7 @@ class DoctorController extends Controller
         $doctor = new Doctor;
 
         $doctor->doctor_name = $request->doctorname ;//input name//
-       $doctor->photo = $path;
+        $doctor->photo = $path;
         $doctor->address = $request->address;
         $doctor->phone_number = $request->phonenumber;
         $doctor->qualification = $request->qualification;

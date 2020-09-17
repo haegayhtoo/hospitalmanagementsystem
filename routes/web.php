@@ -83,8 +83,6 @@ Route::get('/','FrontendPageController@mainfun')->name('index');
 
 // Route::get('doctorlist','FrontendPageController@doctor')->name('doctor');
 
-
-
 // });
 
 
