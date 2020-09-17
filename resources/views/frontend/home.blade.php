@@ -18,7 +18,6 @@
     	<div class="container-fluid px-0">
     		<div class="row no-gutters">
     			
-
     			<div class="col-md-12">
     				<div class="row no-gutters">
     					<div class="col-md-4">
@@ -45,7 +44,7 @@
                                        Colon surgery,
                                        Laparoscopic cholecystectomy,
                                        Breast surgery
-	</p>
+	                                </p>
     							</div>
     						</div>
     						<div class="department-wrap p-4 ftco-animate">

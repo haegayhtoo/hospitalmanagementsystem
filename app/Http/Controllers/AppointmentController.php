@@ -46,11 +46,10 @@ class AppointmentController extends Controller
         "phonenumber" => 'required',
         "date" => 'required',
         "address" => 'required',
+        "disease" => 'required',
         "doctorname" => 'required',
         "statusid" => 'required',
-        "patientid" => 'required',
-        "scheduleid" => 'required',
-        "staffid" => 'required',
+        
     ]);
         $appointment = new Appointment;
 
@@ -59,11 +58,10 @@ class AppointmentController extends Controller
         $appointment->phone_number = $request->phonenumber;
         $appointment->date_of_birth = $request->date;
         $appointment->address = $request->address ;
+        $appointment->disease = $request->disease ;
         $appointment->doctor_name = $request->doctorname;
         $appointment->status_id = $request->statusid;
-        $appointment->patient_id = $request->patientid;
-        $appointment->schedule_id = $request->scheduleid;
-        $appointment->staff_id = $request->staffid;
+        
         $appointment->save();
 
         return redirect()->route('appointments.index');
@@ -107,11 +105,10 @@ class AppointmentController extends Controller
         "phonenumber" => 'required',
         "date" => 'required',
         "address" => 'required',
+        "disease" => 'required',
         "doctorname" => 'required',
         "statusid" => 'required',
-        "patientid" => 'required',
-        "scheduleid" => 'required',
-        "staffid" => 'required',
+        
     ]);
         
 
@@ -120,11 +117,12 @@ class AppointmentController extends Controller
         $appointment->phone_number = $request->phonenumber;
         $appointment->date_of_birth = $request->date;
         $appointment->address = $request->address ;
+        $appointment->disease = $request->disease ;
         $appointment->doctor_name = $request->doctorname;
         $appointment->status_id = $request->statusid;
-        $appointment->patient_id = $request->patientid;
-        $appointment->schedule_id = $request->scheduleid;
-        $appointment->staff_id = $request->staffid;
+        // $appointment->patient_id = $request->patientid;
+        // $appointment->schedule_id = $request->scheduleid;
+        // $appointment->staff_id = $request->staffid;
         $appointment->save();
 
         return redirect()->route('appointments.index');

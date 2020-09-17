@@ -67,6 +67,14 @@
                       <span class="text-danger">{{$errors->first('address')}}</span>   
                     </div>
                 </div>
+
+                <div class="form-group row {{$errors->has('disease')? 'has-error':''}}">
+                   <label for="inputdisease" class="col-sm-2 col-form-label">Disease</label>
+                     <div class="col-sm-6">
+                         <input type="text" name="disease" class="form-control @error('title')is-invalid @enderror" id="inputdisease">    
+                         <span class="text-danger">{{$errors->first('disease')}}</span>                  
+                     </div>
+                </div>
                 
                 <div class="form-group row {{$errors->has('doctorname')? 'has-error':''}}">
                    <label for="inputdoctorname" class="col-sm-2 col-form-label">Doctor Name</label>
@@ -84,28 +92,7 @@
                      </div>
                 </div>
                 
-                <div class="form-group row {{$errors->has('patientid')? 'has-error':''}}">
-                   <label for="inputpatientid" class="col-sm-2 col-form-label">Patient ID</label>
-                     <div class="col-sm-6">
-                         <input type="number" name="patientid" class="form-control @error('title')is-invalid @enderror" id="inputpatientid"> 
-                         <span class="text-danger">{{$errors->first('patientid')}}</span>                     
-                     </div>
-                </div>
-
-                <div class="form-group row {{$errors->has('scheduleid')? 'has-error':''}}">
-                   <label for="inputscheduleid" class="col-sm-2 col-form-label">Schedule ID</label>
-                     <div class="col-sm-6">
-                         <input type="number" name="scheduleid" class="form-control @error('title')is-invalid @enderror" id="inputscheduleid">  
-                         <span class="text-danger">{{$errors->first('scheduleid')}}</span>                    
-                     </div>
-                </div>
-
-                <div class="form-group row {{$errors->has('staffid')? 'has-error':''}}">
-                   <label for="inputstaffid" class="col-sm-2 col-form-label">Staff ID</label>
-                     <div class="col-sm-6">
-                         <input type="number" name="staffid" class="form-control @error('title')is-invalid @enderror" id="inputstaffid"> <span class="text-danger">{{$errors->first('staffid')}}</span>                     
-                     </div>
-                </div>
+                
 
                 <div class="form-group row ">
                   <div class="col-sm-1">

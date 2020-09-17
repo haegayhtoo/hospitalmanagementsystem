@@ -40,9 +40,9 @@
                         <td>{{ $doctor->qualification }}</td>
                         <td>{{ $doctor->gender }}</td>
                         <td>
-                            <a href="{{route('doctor.show',$doctor->id)}}" class="btn btn-primary">Detail</a><br><br>
+                            <a href="{{route('doctor.show',$doctor->id)}}" class="btn btn-primary">Detail</a><br>
 
-                             <a href="{{route('doctor.edit',$doctor->id)}}" class="btn btn-info">Edit</a><br><br>
+                             <a href="{{route('doctor.edit',$doctor->id)}}" class="btn btn-info">Edit</a><br>
                              
                             <form method="post" action="{{route('doctor.destroy',$doctor->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                                 @csrf

@@ -104,7 +104,7 @@ Auth::routes();
 
 Route::get('loginform','FrontendPageController@login')->name('loginform');
 
-
+Route::get('registerform','FrontendPageController@register')->name('registerform');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
