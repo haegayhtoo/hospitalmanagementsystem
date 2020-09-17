@@ -137,6 +137,6 @@
   <script src="{{asset ('frontend/js/main.js')}}"></script>
     
   <script type="text/javascript" src="{{asset('frontend/js/localstorage_custom.js')}}"></script>
-    
+    @yield('script')
   </body>
 </html>
