@@ -1,11 +1,13 @@
 @extends('frontend/master')
 @section('content')
 <div class="jumbotron jumbotron-fluid subtitle">
-      
+    
   </div>
+
 
 <div class="container mt-5">
 	<div class="row">
+
 		@foreach($doctors as $doctor)
 		<div class="col-3">
 			<div class="card" style="width: 18rem;">

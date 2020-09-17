@@ -60,6 +60,13 @@
               </div>
                 
               <div class="form-group row ">
+                   <label for="inputdisease" class="col-sm-2 col-form-label">Disease</label>
+                     <div class="col-sm-6">
+                         <input type="text" name="disease" class="form-control" id="inputdisease">                   
+                     </div>
+              </div>
+
+              <div class="form-group row ">
                    <label for="inputdoctorname" class="col-sm-2 col-form-label">Doctor Name</label>
                      <div class="col-sm-6">
                          <input type="text" name="doctorname" class="form-control" id="inputdoctorname">                   
@@ -73,26 +80,7 @@
                      </div>
                 </div>
 
-                <div class="form-group row ">
-                   <label for="inputpatientid" class="col-sm-2 col-form-label">Padient ID</label>
-                     <div class="col-sm-6">
-                         <input type="number" name="patientid" class="form-control" id="inputpatientid">                   
-                     </div>
-                </div>
-
-                <div class="form-group row ">
-                   <label for="inputscheduleid" class="col-sm-2 col-form-label">Schedule ID</label>
-                     <div class="col-sm-6">
-                         <input type="number" name="scheduleid" class="form-control" id="inputscheduleid">                   
-                     </div>
-                </div>
-
-                <div class="form-group row ">
-                   <label for="inputstaffid" class="col-sm-2 col-form-label">Staff ID</label>
-                     <div class="col-sm-6">
-                         <input type="number" name="staffid" class="form-control" id="inputstaffid">                   
-                     </div>
-                </div>
+               
 
                 <div class="form-group row">
                   <div class="col-sm-1">

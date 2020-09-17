@@ -20,27 +20,11 @@ class CreateAppointmentsTable extends Migration
             $table->string('phone_number');
             $table->date('date_of_birth'); 
             $table->string('address');
+            $table->string('disease');
             $table->string('doctor_name');
             $table->integer('status_id');
 
-            $table->unsignedBigInteger('patient_id');
-            $table->unsignedBigInteger('schedule_id');
-            $table->unsignedBigInteger('staff_id');
-
-            $table->foreign('patient_id')
-                  ->references('id')
-                  ->on('patients')
-                  ->onDelete('cascade');
-
-            $table->foreign('schedule_id')
-                  ->references('id')
-                  ->on('schedules')
-                  ->onDelete('cascade');
-
-            $table->foreign('staff_id')
-                  ->references('id')
-                  ->on('staff')
-                  ->onDelete('cascade');
+            
             $table->timestamps();
         });
     }
