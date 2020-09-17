@@ -73,19 +73,15 @@
                          <div class="form-group row">
                             <select class="form-control form-control-md" id="inputDoctor" name=" doctor">
                              
-                                <option>Choose Doctor</option>
+                              <option>Choose Doctor</option>
                               @foreach($doctors as $doctor)
                               <option value="{{$doctor->id}}">{{$doctor->doctor_name}}
-
                               </option>
                              
                               @endforeach
-
-                              
-                          
                             </select>
                             <input class="form-control form-control-md" type="text" name="date" value="" id="date" readonly="readonly" >
-                          </div> 
+                         </div> 
 
                      </div>
 
