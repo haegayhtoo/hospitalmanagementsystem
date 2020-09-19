@@ -63,9 +63,8 @@
         </div>
   
 <div class="container-fluid">
-<div class="container">
+  <div class="container">
     <div class="row ">
-      
         <div class="col-md-12">
            <form method="post" action="{{route('contacts.store')}}">
             @csrf
@@ -89,18 +88,17 @@
               <div class="form-group row ">
                    <label for="inputsubject" class="col-sm-2 col-form-label">Subject</label>
                      <div class="col-sm-6">
-                         <input type="text" name="subject" class="form-control " id="inputsubject" >
-                                           
+                         <input type="text" name="subject" class="form-control " id="inputsubject">              
                      </div>
                 </div>
 
               <div class="form-group row ">
                       <label for="message" class="col-sm-2 col-form-label">Message</label>
-                      <div class="col-sm-6">
+                  <div class="col-sm-6">
                       <textarea class="form-control" name="message"></textarea>
                         
-                    </div>
-                </div>
+                  </div>
+              </div>
 
 
                
@@ -110,15 +108,14 @@
                     
                     <input type="submit" value="Send Message" class="btn btn-info confirmbtn">
                   </div>
+                </div>
 
                  {{--  <div class="col-sm-1">
                      <a href="{{route('index')}}" class="btn btn-info">Cancel</a><br><br>
-                  </div> --}}
-    
-            
-        </div>
-
+                  </div> --}}   
+        </form>
+      </div>
     </div>
-</div>
+  </div>
 </div>
 @endsection

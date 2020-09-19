@@ -48,6 +48,7 @@ class AppointmentController extends Controller
         "address" => 'required',
         "disease" => 'required',
         "doctorname" => 'required',
+        // "starttime" => 'required',
         "statusid" => 'required',
         
     ]);
@@ -60,6 +61,7 @@ class AppointmentController extends Controller
         $appointment->address = $request->address ;
         $appointment->disease = $request->disease ;
         $appointment->doctor_name = $request->doctorname;
+        // $appointment->start_time = $request->starttime;
         $appointment->status_id = $request->statusid;
         
         $appointment->save();
@@ -107,6 +109,7 @@ class AppointmentController extends Controller
         "address" => 'required',
         "disease" => 'required',
         "doctorname" => 'required',
+        // "starttime" => 'required',
         "statusid" => 'required',
         
     ]);
@@ -119,6 +122,7 @@ class AppointmentController extends Controller
         $appointment->address = $request->address ;
         $appointment->disease = $request->disease ;
         $appointment->doctor_name = $request->doctorname;
+        // $appointment->start_time = $request->starttime;
         $appointment->status_id = $request->statusid;
         // $appointment->patient_id = $request->patientid;
         // $appointment->schedule_id = $request->scheduleid;

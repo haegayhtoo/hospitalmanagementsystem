@@ -22,6 +22,7 @@ class CreateAppointmentsTable extends Migration
             $table->string('address');
             $table->string('disease');
             $table->string('doctor_name');
+            // $table->time('start_time');
             $table->integer('status_id');
 
             

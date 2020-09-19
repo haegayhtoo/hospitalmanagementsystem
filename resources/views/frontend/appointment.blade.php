@@ -69,7 +69,7 @@
               <div class="form-group row ">
                    <label for="inputdoctorname" class="col-sm-2 col-form-label">Doctor Name</label>
                      <div class="col-sm-6">
-                         {{-- <input type="text" name="doctorname" class="form-control" id="inputdoctorname"> --}} 
+                         {{-- <input type="text" name="doctorname" class="form-control" id="inputdoctorname">  --}}
                          <div class="form-group row">
                             <select class="form-control form-control-md" id="inputDoctor" name="doctor">
                              
@@ -81,12 +81,33 @@
                              
                               @endforeach
                             </select>
+                            
                             <input class="form-control form-control-md" type="text" name="date" value="" id="date" readonly="readonly" >
                           </div> 
-
+                      
                      </div>
-
+                     
               </div>
+                
+              {{-- <div class="form-group row ">
+                   <label for="inputtime" class="col-sm-2 col-form-label">Schedule</label>
+                     <div class="col-sm-6">
+                      
+                         {{-- <input type="text" name="starttime" class="form-control" id="inputtime">
+                         <div class="form-group row"> --}}
+                            {{-- <select class="form-control form-control-md" id="inputtime" name="starttime">
+                              <option>Schedule</option>
+                              @foreach($schedules as $schedule)
+                                <option value="{{$schedule->id}}">{{$schedule->start_time}}
+                                </option>
+                              @endforeach
+                           </select> --}}
+                            {{-- <input class="form-control form-control-md" type="text" name="date" value="" id="date" readonly="readonly" > --}}
+                         {{--  </div> 
+ --}}
+                     {{-- </div> --}} 
+
+              {{-- </div>  --}}
                 
                 <div class="form-group row ">
                    <label for="inputstatusid" class="col-sm-2 col-form-label">Status ID</label>
@@ -118,7 +139,25 @@
 <script type="text/javascript">
   $('document').ready(function(){
     $('#inputDoctor').change(function(){
-      $('#date').val("9")
+
+      alert('ok');
+     //   var starttime=$(this).data('starttime');
+
+
+     // localStorage.setItem('starttime',JSON.stringify(starttime));  
+     //            getData(); 
+
+
+
+     // $('#inputtime').val($starttime);
+       // var time = localStorage.getItem('start_time');
+       // console.log('start_time');
+     // $('#date').val('9')
+
+    //   $('#date').val("var schedule = localStorage.getItem(key)");
+    // return JSON.parse(schedule);
+     // var f=parseInt($('#schedule').val());
+     //$('#schedule').val();
     })
   })
 

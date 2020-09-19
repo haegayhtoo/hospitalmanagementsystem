@@ -11,7 +11,7 @@
 		@foreach($doctors as $doctor)
 		<div class="col-3">
 			<div class="card" style="width: 18rem;">
-			  <img src="{{$doctor->photo}}" class="card-img-top" alt="..." >
+			  <img src="{{$doctor->photo}}" class="card-img-top" width="200px" height="250" alt="..." >
 			  <div class="card-body">
 			    <h5 class="card-title">{{$doctor->doctor_name}}</h5>
 			    <p class="card-text">Address: {{$doctor->address}}</p>

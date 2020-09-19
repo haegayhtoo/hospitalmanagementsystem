@@ -25,6 +25,7 @@
                         <th>Address</th>
                         <th>Disease</th>
                         <th>Doctor Name</th>
+                        {{-- <th>Schedule</th> --}}
                         <th>Status ID</th>
                         
                         <th>Action</th>
@@ -43,6 +44,7 @@
                         <td>{{ $appointment->address}}</td>
                         <td>{{ $appointment->disease}}</td>
                         <td>{{ $appointment->doctor_name}}</td>
+                        {{-- <td>{{ $appointment->start_time}}</td> --}}
                         <td>{{ $appointment->status_id }}</td>
                         
                         <td>
