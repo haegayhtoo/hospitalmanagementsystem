@@ -63,7 +63,7 @@ Route::get('/','FrontendPageController@mainfun')->name('index');
 
 // Route::middleware('role:Admin')->group(function(){
    
-// Route::resource('appointments','AppointmentController');
+// //Route::resource('appointments','AppointmentController');
 
 // Route::get('/admin','AdminPageController@dashboard')->name('dashboard');
 
@@ -73,7 +73,7 @@ Route::get('/','FrontendPageController@mainfun')->name('index');
    
 // Route::get('/adminstaff','AdminStaffPageController@dashboard1')->name('dashboard1');
 
-// Route::get('contact','FrontendPageController@contact')->name('contact');
+// //Route::get('contact','FrontendPageController@contact')->name('contact');
 
 // });
 

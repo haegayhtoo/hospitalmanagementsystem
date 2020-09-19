@@ -1,8 +1,6 @@
 @extends('frontend/master')
 @section('content')
-{{-- <div class="jumbotron jumbotron-fluid subtitle">
-      
-</div> --}}
+
 <section class="hero-wrap js-fullheight" style="background-image: url('{{asset('frontend/images/bg_3.jpg')}}');" data-section="home" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
@@ -14,7 +12,7 @@
           </div>
         </div>
       </div>
-    </section>
+</section>
   <section class="ftco-section contact-section" id="contact-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
@@ -61,20 +59,22 @@
             </div>
           </div>
         </div>
+      </div>
+
   
 <div class="container-fluid">
 <div class="container">
     <div class="row ">
       
         <div class="col-md-12">
-           <form method="post" action="{{route('contacts.store')}}">
+          <form method="post" action="{{route('contacts.store')}}">
             @csrf
               <div class="form-group row ">
                    <label for="inputname" class="col-sm-2 col-form-label">Name</label>
                      <div class="col-sm-6">
                          <input type="text" name="name" class="form-control" id="inputname" >                  
                      </div>
-                </div>
+              </div>
                 
               
                 <div class="form-group row ">
@@ -92,18 +92,16 @@
                          <input type="text" name="subject" class="form-control " id="inputsubject" >
                                            
                      </div>
-                </div>
+              </div>
 
               <div class="form-group row ">
                       <label for="message" class="col-sm-2 col-form-label">Message</label>
                       <div class="col-sm-6">
                       <textarea class="form-control" name="message"></textarea>
                         
-                    </div>
-                </div>
+                      </div>
+              </div>
 
-
-               
 
                 <div class="form-group row">
                   <div class="col-sm-1">
@@ -116,9 +114,12 @@
                   </div> --}}
     
             
+                </div>
+          </form>
         </div>
 
     </div>
 </div>
 </div>
+</section>
 @endsection

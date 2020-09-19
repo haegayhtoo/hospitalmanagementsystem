@@ -9,7 +9,7 @@
     <div class="row ">
       
         <div class="col-md-12">
-           <form method="post" action="{{route('appointments.store')}}">
+          <form method="post" action="{{route('appointments.store')}}">
             @csrf
               <div class="form-group row ">
                    <label for="inputname" class="col-sm-2 col-form-label">Name</label>
@@ -70,8 +70,8 @@
                    <label for="inputdoctorname" class="col-sm-2 col-form-label">Doctor Name</label>
                      <div class="col-sm-6">
                          {{-- <input type="text" name="doctorname" class="form-control" id="inputdoctorname"> --}} 
-                         <div class="form-group row">
-                            <select class="form-control form-control-md" id="inputDoctor" name=" doctor">
+                        {{-- <div class="form-group row"> --}}
+                            <select class="form-control form-control-md" id="inputDoctor" name=" doctor" >
                              
                               <option>Choose Doctor</option>
                               @foreach($doctors as $doctor)
@@ -81,7 +81,7 @@
                               @endforeach
                             </select>
                             <input class="form-control form-control-md" type="text" name="date" value="" id="date" readonly="readonly" >
-                         </div> 
+                         {{-- </div>  --}}
 
                      </div>
 
@@ -95,7 +95,6 @@
                 </div>
 
                
-
                 <div class="form-group row">
                   <div class="col-sm-1">
                     
@@ -107,6 +106,8 @@
                   </div> --}}
     
             
+                </div>
+          </form>
         </div>
 
     </div>
