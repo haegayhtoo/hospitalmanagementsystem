@@ -71,7 +71,7 @@
                      <div class="col-sm-6">
                          {{-- <input type="text" name="doctorname" class="form-control" id="inputdoctorname"> --}} 
                          <div class="form-group row">
-                            <select class="form-control form-control-md" id="inputDoctor" name=" doctor">
+                            <select class="form-control form-control-md" id="inputDoctor" name="doctor">
                              
                                 <option>Choose Doctor</option>
                               @foreach($doctors as $doctor)
@@ -84,20 +84,20 @@
                               
                           
                             </select>
-                            <input class="form-control form-control-md" type="text" name="date" value="" id="date" readonly="readonly" >
+                            <input class="form-control form-control-md" type="text" name="date1" value="" id="date1" readonly="readonly" >
                           </div> 
 
                      </div>
 
               </div>
                 
-                <div class="form-group row ">
+               {{--  <div class="form-group row ">
                    <label for="inputstatusid" class="col-sm-2 col-form-label">Status ID</label>
                      <div class="col-sm-6">
                          <input type="number" name="statusid" class="form-control" id="inputstatusid">                   
                      </div>
                 </div>
-
+ --}}
                
 
                 <div class="form-group row">
@@ -121,7 +121,7 @@
 <script type="text/javascript">
   $('document').ready(function(){
     $('#inputDoctor').change(function(){
-      $('#date').val("9")
+      
     })
   })
 

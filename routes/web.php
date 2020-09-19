@@ -60,6 +60,8 @@ Route::get('contact','FrontendPageController@contact')->name('contact');
 
 Route::get('/','FrontendPageController@mainfun')->name('index');
 
+Route::get('searchdate','FrontendPageController@searchDate')->name('searchdate');
+
 
 // Route::middleware('role:Admin')->group(function(){
    

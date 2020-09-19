@@ -25,7 +25,6 @@
                         <th>Address</th>
                         <th>Disease</th>
                         <th>Doctor Name</th>
-                        <th>Status ID</th>
                         
                         <th>Action</th>
 
@@ -42,9 +41,8 @@
                         <td>{{ $appointment->date_of_birth }}</td>
                         <td>{{ $appointment->address}}</td>
                         <td>{{ $appointment->disease}}</td>
-                        <td>{{ $appointment->doctor_name}}</td>
-                        <td>{{ $appointment->status_id }}</td>
-                        
+                        <td>{{ $appointment->doctor->doctor_name}}</td>
+                       
                         <td>
                         
                         <a href="" class="btn btn-primary">Confirm</a><br>

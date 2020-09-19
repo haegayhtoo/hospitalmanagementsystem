@@ -30,4 +30,9 @@ class FrontendPageController extends Controller
      public function contact(){
         return view('frontend.contact');
     }
+
+    public function searchDate($value='')
+    {
+    return "hello"
+;    }
 }
