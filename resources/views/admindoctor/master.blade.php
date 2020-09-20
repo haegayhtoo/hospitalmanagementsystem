@@ -41,47 +41,27 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
       
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="{{route('doctor.index')}}">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Doctor</span></a>
-      </li>
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="{{route('room.index')}}">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Room</span></a>
-      </li>
-
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="{{route('staff.index')}}">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Staff</span></a>
-      </li>
-
-       <li class="nav-item">
-        <a class="nav-link" href="{{route('patient.index')}}">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Patient</span></a>
-      </li>
-
-      {{-- <li class="nav-item">
+        
+        <li class="nav-item">
         <a class="nav-link" href="{{route('schedule.index')}}">
           <i class="fas fa-fw fa-table"></i>
           <span>Schedule</span></a>
-      </li> --}}
+      </li> 
+
+      
+      
+       {{-- <li class="nav-item">
+          <a class="nav-link" href="{{route('schedule.index')}}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Schedule</span></a>
+      </li>
+       --}}
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">

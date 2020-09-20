@@ -1,4 +1,4 @@
-@extends('admin/master')
+@extends('admindoctor/master')
 @section('content')
 <div class="container-fluid">
         {{-- Page heading --}}
@@ -18,8 +18,8 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>No</th>
-                        <th>Doctor ID</th>
-                        <th>Date</th>
+                        <th>Doctor Name</th>
+                       
                         <th>Start Time</th>
                         <th>End Time</th>
                         
@@ -32,8 +32,8 @@
                     @foreach($schedules as $schedule)
                     <tr>
                         <td>{{ $i++ }}</td>
-                        <td>{{ $schedule->doctor_id}}</td>
-                        <td>{{$schedule->date}}</td>
+                        <td>{{ $schedule->doctor->doctor_name}}</td>
+                    
                         <td>{{ $schedule->start_time}}</td>
                         <td>{{ $schedule->end_time}}</td>
                         

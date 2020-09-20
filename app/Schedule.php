@@ -8,7 +8,7 @@ class Schedule extends Model
 {
       protected $fillable = 
    [
-        'doctor_id', 'date', 'start_time','end_time'
+        'doctor_id', 'start_time','end_time'
     ];
 
     public function doctor(){

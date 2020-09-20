@@ -1,8 +1,6 @@
 @extends('frontend/master')
 @section('content')
-<div class="jumbotron jumbotron-fluid subtitle">
-    
-  </div>
+
 
 
 <div class="container mt-5">

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Doctor;
-
+use App\Schedule;
 class FrontendPageController extends Controller
 {
     public function mainfun($value=''){
@@ -30,4 +30,13 @@ class FrontendPageController extends Controller
      public function contact(){
         return view('frontend.contact');
     }
+
+    public function searchDate($value='')
+    {
+    return "hello"
+;    }
+public function doctorc(Request $request){
+    $dtimes = Schedule::where('doctor_id',$request->id)->get();
+    return response()->json(['dtimes'=>$dtimes]);
+}
 }

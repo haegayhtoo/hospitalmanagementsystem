@@ -40,19 +40,21 @@ class AppointmentController extends Controller
     public function store(Request $request)
     {
        // dd($request);
-       $request->validate([
-        "appointmentname" => 'required',
-        "gender" => 'required',
-        "phonenumber" => 'required',
-        "date" => 'required',
-        "address" => 'required',
-        "disease" => 'required',
-        "doctorname" => 'required',
-        // "starttime" => 'required',
-        "statusid" => 'required',
+
+    //    $request->validate([
+    //     "appointmentname" => 'required',
+    //     "gender" => 'required',
+    //     "phonenumber" => 'required',
+    //     "date" => 'required',
+    //     "address" => 'required',
+    //     "disease" => 'required',
+    //     "doctor" => 'required',
+
         
-    ]);
+        
+    // ]);
         $appointment = new Appointment;
+        // dd($request->doctor);
 
         $appointment->name = $request->appointmentname;
         $appointment->gender = $request->gender;
@@ -60,9 +62,14 @@ class AppointmentController extends Controller
         $appointment->date_of_birth = $request->date;
         $appointment->address = $request->address ;
         $appointment->disease = $request->disease ;
-        $appointment->doctor_name = $request->doctorname;
-        // $appointment->start_time = $request->starttime;
-        $appointment->status_id = $request->statusid;
+
+        // $appointment->doctor_name = $request->doctorname;
+        // // $appointment->start_time = $request->starttime;
+        // $appointment->status_id = $request->statusid;
+
+        $appointment->doctor_id = $request->doctor;
+      
+
         
         $appointment->save();
 

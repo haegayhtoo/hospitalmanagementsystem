@@ -1,4 +1,4 @@
-@extends('admin/master')
+@extends('admindoctor/master')
 @section('content')
 <div class="container-fluid">
       {{-- Page heading --}}
@@ -15,21 +15,6 @@
         <div class="col-md-12">
         <form action="{{route('schedule.store')}}" method="post" >
           @csrf
-
-              <div class="form-group row {{$errors->has('doctorid')? 'has-error':''}}">
-                   <label for="inputdoctorid" class="col-sm-2 col-form-label">Doctor ID</label>
-                     <div class="col-sm-6">
-                         <input type="text" name="doctorid" class="form-control @error('title')is-invalid @enderror" id="inputdoctorid" >  <span class="text-danger">{{$errors->first('doctorid')}}</span>                       
-                     </div>
-                </div>
-
-                <div class="form-group row {{$errors->has('scheduledate')? 'has-error':''}}">
-                   <label for="inputdate" class="col-sm-2 col-form-label">Date</label>
-                     <div class="col-sm-6">
-                         <input type="date" name="scheduledate" class="form-control @error('title')is-invalid @enderror" id="inputdate" > 
-                         <span class="text-danger">{{$errors->first('scheduledate')}}</span>                      
-                     </div>
-                </div>
 
                
               <div class="form-group row {{$errors->has('starttime')? 'has-error':''}}">

@@ -28,6 +28,8 @@ Route::get('/admin','AdminPageController@dashboard')->name('dashboard');
 
 Route::get('/adminstaff','AdminStaffPageController@dashboard1')->name('dashboard1');
 
+Route::get('/admindoctor','DoctorPageController@dashboard2')->name('dashboard2');
+
 
 Route::get('doctor','DoctorController@doctorfun')->name('doctorpage');
 
@@ -59,6 +61,8 @@ Route::get('index','FrontendPageController@index')->name('index');
 Route::get('contact','FrontendPageController@contact')->name('contact');
 
 Route::get('/','FrontendPageController@mainfun')->name('index');
+
+Route::get('searchdate','FrontendPageController@searchDate')->name('searchdate');
 
 
 // Route::middleware('role:Admin')->group(function(){
@@ -111,5 +115,5 @@ Route::get('registerform','FrontendPageController@register')->name('registerform
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+Route::post('doctorc','FrontendPageController@doctorc')->name('doctorc');
 

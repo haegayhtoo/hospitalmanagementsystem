@@ -73,7 +73,7 @@
                          <div class="form-group row">
                             <select class="form-control form-control-md" id="inputDoctor" name="doctor">
                              
-                                <option>Choose Doctor</option>
+                                <option selected disabled>Choose Doctor</option>
                               @foreach($doctors as $doctor)
                               <option value="{{$doctor->id}}">{{$doctor->doctor_name}}
 
@@ -81,14 +81,20 @@
                              
                               @endforeach
                             </select>
+
                             
-                            <input class="form-control form-control-md" type="text" name="date" value="" id="date" readonly="readonly" >
+                            {{-- <input class="form-control form-control-md" type="text" name="date" value="" id="date" readonly="readonly" > --}}
+
+                            
+
                           </div> 
                       
                      </div>
                      
               </div>
                 
+              <input class="form-control form-control-md" type="time" name="stime" value="" id="stime" readonly="readonly" >
+              <input class="form-control form-control-md" type="time" name="etime" value="" id="etime" readonly="readonly" >
               {{-- <div class="form-group row ">
                    <label for="inputtime" class="col-sm-2 col-form-label">Schedule</label>
                      <div class="col-sm-6">
@@ -110,12 +116,15 @@
               {{-- </div>  --}}
                 
                 <div class="form-group row ">
+
+               {{--  <div class="form-group row ">
+
                    <label for="inputstatusid" class="col-sm-2 col-form-label">Status ID</label>
                      <div class="col-sm-6">
                          <input type="number" name="statusid" class="form-control" id="inputstatusid">                   
                      </div>
                 </div>
-
+ --}}
                
 
                 <div class="form-group row">
@@ -137,27 +146,32 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-  $('document').ready(function(){
+  $(document).ready(function(){
+    $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
     $('#inputDoctor').change(function(){
 
-      alert('ok');
-     //   var starttime=$(this).data('starttime');
+
+     var id = $(this).val();
 
 
-     // localStorage.setItem('starttime',JSON.stringify(starttime));  
-     //            getData(); 
+     $.post('doctorc',{id:id},function(response){
+      console.log(response.dtimes.length);
+      if(response.dtimes.length>0){
+      $.each(response.dtimes,function(i,v){
+        console.log(v);
+        $('#stime').val(v.start_time);
+        $('#etime').val(v.end_time);
+      });}else{
+        $('#stime').val('');
+        $('#etime').val('');
+      }
+     })
+    
 
-
-
-     // $('#inputtime').val($starttime);
-       // var time = localStorage.getItem('start_time');
-       // console.log('start_time');
-     // $('#date').val('9')
-
-    //   $('#date').val("var schedule = localStorage.getItem(key)");
-    // return JSON.parse(schedule);
-     // var f=parseInt($('#schedule').val());
-     //$('#schedule').val();
     })
   })
 

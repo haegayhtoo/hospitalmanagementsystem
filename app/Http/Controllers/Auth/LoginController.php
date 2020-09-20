@@ -42,26 +42,25 @@ class LoginController extends Controller
      protected function authenticated(Request $request, $user)
     {
         // User role
-    //     $roles = $user->getRoleNames();
+        $roles = $user->getRoleNames();
 
     //     // Check user role
-    //     switch ($roles[0]) {
-    //         case 'Admin':
-    //                 return redirect('admin');
-    //             break;
-    //         case 'Patient':
-    //                 return redirect('/');
-    //             break; 
-    //         case 'Staff':
-    //                 return redirect('adminstaff');
-    //             break;
-    //         // case 'Doctor':
-    //         //         return redirect('adminstaff');
-    //         //     break;      
-    //         // default:
-    //         //         return redirect('/');  
-    //         //     break;
-    //     }
-    // }
-}
+        switch ($roles[0]) {
+            case 'Admin':
+                    return redirect('doctor');
+                break;
+            case 'Patient':
+                    return redirect('index');
+                break; 
+            case 'Staff':
+                    return redirect('adminstaff');
+                break;
+            case 'Doctor':
+                    return redirect('adminstaff');
+                break;      
+            default:
+                    return redirect('/');  
+                break;
+        }
+    }
 }

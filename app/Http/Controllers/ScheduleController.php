@@ -16,7 +16,7 @@ class ScheduleController extends Controller
     public function index()
     {
         $schedules=Schedule::all(); 
-        return view('admin.schedules.index',compact('schedules'));
+        return view('admindoctor.schedules.index',compact('schedules'));
         return view('admin.schedules.index',compact('doctor'));
     }
 
@@ -28,7 +28,7 @@ class ScheduleController extends Controller
     public function create()
     {
          $schedules = Schedule::all();
-        return view('admin.schedules.create',compact('schedules'));
+        return view('admindoctor.schedules.create',compact('schedules'));
     }
 
     /**
@@ -40,15 +40,12 @@ class ScheduleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-        "doctorid" => 'required',
-        "scheduledate" => 'required',
         "starttime" => 'required',
         "endtime" => 'required',
     ]);
         $schedule = new Schedule;
        
-        $schedule->doctor_id = $request->doctorid;
-         $schedule->date = $request->scheduledate;
+        $schedule->doctor_id = 1;
         $schedule->start_time = $request->starttime;
         $schedule->end_time = $request->endtime;
 
@@ -66,7 +63,7 @@ class ScheduleController extends Controller
     public function show(Schedule $schedule)
     {
         $doctors=Doctor::all();
-         return view('admin.schedules.detail',compact('schedule'));
+         return view('admindoctor.schedules.detail',compact('schedule'));
     }
     
 
@@ -80,7 +77,7 @@ class ScheduleController extends Controller
     {
         
         $schedules = Schedule::all();
-       return view('admin.schedules.edit',compact('schedules','schedule'));
+       return view('admindoctor.schedules.edit',compact('schedules','schedule'));
     }
 
     /**
