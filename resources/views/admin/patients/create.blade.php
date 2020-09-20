@@ -55,8 +55,8 @@
                       <div class="col-sm-6">
                       <textarea class="form-control @error('title')is-invalid @enderror" name="address"></textarea>
                       <span class="text-danger">{{$errors->first('address')}}</span>
-                    </div>
-                </div>
+                      </div>
+              </div>
                 
 
               <div class="form-group row {{$errors->has('phonenumber')? 'has-error':''}}">
@@ -90,7 +90,7 @@
                 </div>
 
                 <div class="form-group row {{$errors->has('enddate')? 'has-error':''}}">
-                   <label for="inputenddate" class="col-sm-enddate2 col-form-label">End Date</label>
+                   <label for="inputenddate" class="col-sm-2 col-form-label">End Date</label>
                      <div class="col-sm-6">
                          <input type="date" name="enddate" class="form-control @error('title')is-invalid @enderror" id="inputenddate" > 
                          <span class="text-danger">{{$errors->first('enddate')}}</span>                      

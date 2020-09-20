@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Doctor;
 
+
 class FrontendPageController extends Controller
 {
     public function mainfun($value=''){
@@ -30,4 +31,10 @@ class FrontendPageController extends Controller
      public function contact(){
         return view('frontend.contact');
     }
+
+    public function searchDate($value='')
+    {
+    return "hello";    
+    }
+   
 }

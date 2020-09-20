@@ -60,30 +60,36 @@ Route::get('contact','FrontendPageController@contact')->name('contact');
 
 Route::get('/','FrontendPageController@mainfun')->name('index');
 
+Route::get('searchdate','FrontendPageController@searchDate')->name('searchdate');
 
-// Route::middleware('role:Admin')->group(function(){
+
+Route::middleware('role:Admin')->group(function(){
    
-// //Route::resource('appointments','AppointmentController');
+//Route::resource('appointments','AppointmentController');
 
-// Route::get('/admin','AdminPageController@dashboard')->name('dashboard');
+Route::get('/admin','AdminPageController@dashboard')->name('dashboard');
+
+});
+
+Route::middleware('role:Staff')->group(function(){
+   
+Route::get('/adminstaff','AdminStaffPageController@dashboard1')->name('dashboard1');
+
+//Route::get('contact','FrontendPageController@contact')->name('contact');
+
+});
+
+// Route::middleware('role:Doctor')->group(function(){
+   
+// //Route::get('/adminstaff','AdminStaffPageController@dashboard1')->name('dashboard1');
 
 // });
 
-// Route::middleware('role:Staff')->group(function(){
+Route::middleware('role:Patient')->group(function(){
    
-// Route::get('/adminstaff','AdminStaffPageController@dashboard1')->name('dashboard1');
+Route::get('index','FrontendPageController@index')->name('index');
 
-// //Route::get('contact','FrontendPageController@contact')->name('contact');
-
-// });
-
-// Route::middleware('role:Patient')->group(function(){
-   
-// Route::get('appointment','FrontendPageController@appointment')->name('appointment');
-
-// Route::get('doctorlist','FrontendPageController@doctor')->name('doctor');
-
-// });
+});
 
 
 Route::get('/','FrontendPageController@mainfun')->name('index');
