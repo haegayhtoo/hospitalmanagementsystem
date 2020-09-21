@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Staff;
 use Illuminate\Http\Request;
+use App\Appointment;
 
 class StaffController extends Controller
 {
@@ -114,5 +115,19 @@ class StaffController extends Controller
     {
          $staff->delete();
         return redirect()->route('staff.index');
+    }
+     public function cancel($id){
+        $appointments=Appointment::find($id);
+        $appointments->status=0;
+        $appointments->save();
+        return back();
+    }
+    public function confirm($id){
+        $appointments=Appointment::find($id);
+        $appointments->status=1;
+        $appointments->save();
+        return back();
+    
+        
     }
 }

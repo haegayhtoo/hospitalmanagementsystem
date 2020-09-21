@@ -1,8 +1,8 @@
-@extends('admin/master')
+{{-- @extends('admin/master')
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid"> --}}
     	{{-- Page heading --}}
-    	<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    	{{-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Staff Edit List</h1>
             <div class="text-right">
               <a href="{{route('staff.index')}}"  class="btn btn-success">
@@ -35,14 +35,14 @@
                    <label for="inputgender" class="col-sm-2 col-form-label" value="{{$staff->gender}}">Gender</label>
                   <div class="col-md-6">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gender" id="inputradio" value="female" checked>
+                      <input class="form-check-input" type="radio" name="gender" id="inputradio" @if($staff->gender=='female')checked @endif value="female" >
                       <label class="form-check-label" for="inputradio">
                       Female
                       </label>
                     </div>
                 
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gender" id="inputradio" value="male" checked>
+                      <input class="form-check-input" type="radio" name="gender" id="inputradio"  @if($staff->gender=='male')checked @endif value="male" >
                       <label class="form-check-label" for="inputradio">
                       Male
                       </label>
@@ -68,4 +68,4 @@
         
 </div>
     
-@endsection
+@endsection --}}

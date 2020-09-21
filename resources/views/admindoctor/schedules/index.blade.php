@@ -1,4 +1,4 @@
-@extends('admin/master')
+@extends('admindoctor/master')
 @section('content')
 <div class="container-fluid">
         {{-- Page heading --}}
@@ -18,8 +18,8 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>No</th>
-                        <th>Doctor ID</th>
-                        <th>Date</th>
+                        <th>Doctor Name</th>
+                       
                         <th>Start Time</th>
                         <th>End Time</th>
                         
@@ -32,8 +32,8 @@
                     @foreach($schedules as $schedule)
                     <tr>
                         <td>{{ $i++ }}</td>
-                        <td>{{ $schedule->doctor_id}}</td>
-                        <td>{{$schedule->date}}</td>
+                        <td>{{ $schedule->user->name}}</td>
+                    
                         <td>{{ $schedule->start_time}}</td>
                         <td>{{ $schedule->end_time}}</td>
                         
@@ -41,7 +41,7 @@
                         <td>
                             {{-- <a href="{{route('schedule.show',$schedule->id)}}" class="btn btn-primary">Detail</a> --}}
 
-                             <a href="{{route('schedule.edit',$schedule->id)}}" class="btn btn-info">Edit</a>
+                            {{--  <a href="{{route('schedule.edit',$schedule->id)}}" class="btn btn-info">Edit</a> --}}
                              
                             <form method="post" action="{{route('schedule.destroy',$schedule->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                                 @csrf

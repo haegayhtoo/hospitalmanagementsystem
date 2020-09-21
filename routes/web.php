@@ -28,6 +28,8 @@ Route::get('/admin','AdminPageController@dashboard')->name('dashboard');
 
 Route::get('/adminstaff','AdminStaffPageController@dashboard1')->name('dashboard1');
 
+Route::get('/admindoctor','DoctorPageController@dashboard2')->name('dashboard2');
+
 
 Route::get('doctor','DoctorController@doctorfun')->name('doctorpage');
 
@@ -39,6 +41,8 @@ Route::get('doctor','DoctorController@doctorfun')->name('doctorpage');
 //Route::get('room','RoomController@roomfun')->name('roompage');
 
 Route::get('schedule','ScheduleController@schedulefun')->name('schedulepage');
+
+Route::get('appoint','AppointController@schedulefun')->name('appointpage');
 
 
 
@@ -63,48 +67,69 @@ Route::get('/','FrontendPageController@mainfun')->name('index');
 Route::get('searchdate','FrontendPageController@searchDate')->name('searchdate');
 
 
+
+
 Route::middleware('role:Admin')->group(function(){
    
-//Route::resource('appointments','AppointmentController');
-
 Route::get('/admin','AdminPageController@dashboard')->name('dashboard');
-
-});
-
-Route::middleware('role:Staff')->group(function(){
-   
-Route::get('/adminstaff','AdminStaffPageController@dashboard1')->name('dashboard1');
-
-//Route::get('contact','FrontendPageController@contact')->name('contact');
-
-});
-
-// Route::middleware('role:Doctor')->group(function(){
-   
-// //Route::get('/adminstaff','AdminStaffPageController@dashboard1')->name('dashboard1');
-
-// });
-
-Route::middleware('role:Patient')->group(function(){
-   
-Route::get('index','FrontendPageController@index')->name('index');
-
-});
-
-
-Route::get('/','FrontendPageController@mainfun')->name('index');
 
 Route::resource('staff','StaffController');
 
 Route::resource('doctor','DoctorController');
 
-Route::resource('patient','PatientController');
+});
 
-Route::resource('schedule','ScheduleController');
+
+Route::middleware('role:Staff')->group(function(){
+   
+Route::get('/adminstaff','AdminStaffPageController@dashboard1')->name('dashboard1');
 
 Route::resource('appointments','AppointmentController');
 
+Route::resource('patient','PatientController');
+
 Route::resource('contacts','ContactController');
+
+
+
+Route::get('cancel/{id}','StaffController@cancel')->name('cancel');
+Route::get('confirm/{id}','StaffController@confirm')->name('confirm');
+
+});
+
+Route::middleware('role:Doctor')->group(function(){
+   
+Route::get('/admindoctor','DoctorPageController@dashboard2')->name('dashboard2');
+
+Route::resource('schedule','ScheduleController');
+Route::resource('appoint','AppointController');
+
+});
+
+Route::middleware('role:Patient')->group(function(){
+   
+Route::get('index','FrontendPageController@index')->name('index');
+
+Route::get('viewapp','FrontendPageController@viewapp')->name('viewappform');
+});
+
+
+Route::get('/','FrontendPageController@mainfun')->name('index');
+
+//Route::resource('staff','StaffController');
+
+//Route::resource('doctor','DoctorController');
+
+// Route::resource('patient','PatientController');
+
+// Route::resource('schedule','ScheduleController');
+
+Route::resource('appointments','AppointmentController');
+
+ Route::resource('contacts','ContactController');
+
+// Route::resource('appoint','AppointController');
+
 
 Auth::routes();
 
@@ -115,5 +140,10 @@ Route::get('registerform','FrontendPageController@register')->name('registerform
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('doctorc','FrontendPageController@doctorc')->name('doctorc');
 
+//Route::get('viewapp','FrontendPageController@viewapp')->name('viewappform');
+
+// Route::get('cancel/{id}','StaffController@cancel')->name('cancel');
+// Route::get('confirm/{id}','StaffController@confirm')->name('confirm');
 

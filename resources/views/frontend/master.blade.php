@@ -4,7 +4,8 @@
     <title>Hospital Management System</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="{{asset ('frontend/css/open-iconic-bootstrap.min.css')}}">
@@ -51,6 +52,9 @@
                                {{ Auth::user()->name }}</a>
                          
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="{{route('viewappform')}}">
+                                        view appointment
+                               </a>
                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                                          {{ __('Logout') }}
@@ -61,15 +65,8 @@
                              </form>
                             </div>
                         @endguest
-
-                       
-
-                  
                         
 					    </div>
-
-              
-
 				    </div>
 			    </div>
 		    </div>
@@ -102,9 +99,8 @@
         <div class="row">
           <div class="col-md-12 text-center">
   
-            <p>
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">SPNM</a>
-  </p>
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">SPNM</a>
+            </p>
           </div>
         </div>
       </div>

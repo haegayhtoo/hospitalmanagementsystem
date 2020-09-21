@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Doctor;
 use Illuminate\Http\Request;
-
+use App\User;
+use Hash;
 class DoctorController extends Controller
 {
     /**
@@ -39,6 +40,8 @@ class DoctorController extends Controller
     {
          $request->validate([
         "doctorname" => 'required',
+        "doctoremail"=>'required',
+        "doctorpassword" => 'required',
         "photo" => 'required|image',
         "address" => 'required',
         "phonenumber" => 'required',
@@ -49,16 +52,22 @@ class DoctorController extends Controller
         $imageName = time().'.'.$request->photo->extension();
         $request->photo->move(public_path('frontend/doctorimg'),$imageName);
         $path = 'frontend/doctorimg/'.$imageName;
+        $user = new User;
+        $user->name = $request->doctorname;
+        $user->email = $request->doctoremail;
+        $user->password = Hash::make($request->doctorpassword);
+        $user->save();
 
         $doctor = new Doctor;
 
-        $doctor->doctor_name = $request->doctorname ;//input name//
+        $doctor->user_id = $user->id;//input name//
         $doctor->photo = $path;
         $doctor->address = $request->address;
         $doctor->phone_number = $request->phonenumber;
         $doctor->qualification = $request->qualification;
         $doctor->gender = $request->gender;
         $doctor->save();
+        $user->assignRole('Doctor');
 
         return redirect()->route('doctor.index');
     }

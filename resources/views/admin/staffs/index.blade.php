@@ -38,7 +38,7 @@
                         <td>
                             <a href="{{route('staff.show',$staff->id)}}" class="btn btn-primary">Detail</a>
 
-                             <a href="{{route('staff.edit',$staff->id)}}" class="btn btn-info">Edit</a>
+                            {{--  <a href="{{route('staff.edit',$staff->id)}}" class="btn btn-info">Edit</a> --}}
                              
                             <form method="post" action="{{route('staff.destroy',$staff->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
                                 @csrf

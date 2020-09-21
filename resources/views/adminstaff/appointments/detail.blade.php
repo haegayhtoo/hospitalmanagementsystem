@@ -24,6 +24,7 @@
                     <p>Address: &nbsp; &nbsp; &nbsp;{{$appointment->address}}</p>
                     <p>Disease: &nbsp; &nbsp; &nbsp;{{$appointment->disease}}</p>
                     <p>Doctor Name:  &nbsp; &nbsp; &nbsp;{{$appointment->doctor_name}}</p>
+                    {{-- <p>Start Time: &nbsp; &nbsp; &nbsp;{{$appointment->start_time}}</p> --}}
                      <p>Status ID:  &nbsp; &nbsp; &nbsp;{{$appointment->status_id}}</p>
                    
                     

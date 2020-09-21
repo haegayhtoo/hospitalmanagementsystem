@@ -8,10 +8,10 @@ class Schedule extends Model
 {
       protected $fillable = 
    [
-        'doctor_id', 'date', 'start_time','end_time'
+        'user_id', 'start_time','end_time'
     ];
 
-    public function doctor(){
-    return $this->belongsTo('App\Doctor','doctor_id');
+    public function user(){
+    return $this->belongsTo('App\User','user_id');
     }
 }

@@ -57,7 +57,7 @@ class LoginController extends Controller
                     return redirect('adminstaff');
                 break;
             case 'Doctor':
-                    return redirect('adminstaff');
+                    return redirect('admindoctor');
                 break;      
             default:
                     return redirect('/');  

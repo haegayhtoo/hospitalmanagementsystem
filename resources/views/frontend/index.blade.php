@@ -176,6 +176,26 @@
                         <div class="media-body pl-md-4">
                             <h3 class="heading mb-3">Outdoors Checkup</h3>
 
+
+                                   {{--  There are also paediatric neurologists who treat children. Neurologists may also be involved in clinical.</p>
+    							</div>
+    						</div>
+    						<div class="department-wrap p-4 ftco-animate">
+    							<div class="text p-2 text-center">
+    								<div class="icon">
+    									<span class="flaticon-stethoscope"></span>
+    								</div>
+    								<h3><a href="#">Ophthalmology</a></h3>
+    								<p>.General eye clinic appointments<br>
+                                    .Laser treatments<br>
+                                    .Orthoptics (non-surgical treatments)<br>
+                                    .Prosthetic eye services<br>
+                                    .Ophthalmic imaging (eye scans)
+                                    </p>
+    							</div>
+    						</div>
+    					</div>
+ --}}
                         </div>
                     </div>      
                 </div>
@@ -186,6 +206,7 @@
                         </div>
                         <div class="media-body pl-md-4">
                             <h3 class="heading mb-3">24 Hours Service</h3>
+
 
                         </div>
                     </div>      

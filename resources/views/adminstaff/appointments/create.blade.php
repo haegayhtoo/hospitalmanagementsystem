@@ -84,6 +84,14 @@
                      </div>
                 </div>
 
+                {{-- <div class="form-group row {{$errors->has('starttime')? 'has-error':''}}">
+                   <label for="inputtime" class="col-sm-2 col-form-label">Schedule</label>
+                     <div class="col-sm-6">
+                         <input type="time" name="starttime" class="form-control @error('title')is-invalid @enderror" id="inputtime" >  
+                         <span class="text-danger">{{$errors->first('starttime')}}</span>                     
+                     </div>
+                </div> --}}
+
                 <div class="form-group row {{$errors->has('statusid')? 'has-error':''}}">
                    <label for="inputstatusid" class="col-sm-2 col-form-label">Status ID</label>
                      <div class="col-sm-6">

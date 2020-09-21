@@ -1,4 +1,4 @@
-@extends('admin/master')
+@extends('adminstaff/master')
 @section('content')
 <div class="container-fluid">
     	{{-- Page heading --}}
@@ -35,14 +35,14 @@
                    <label for="inputgender" class="col-sm-2 col-form-label"  value="{{$patient->gender}}">Gender</label>
                   <div class="col-md-6">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gender" id="inputradio" value="female" checked>
+                      <input class="form-check-input" type="radio" name="gender" id="inputradio" @if($doctor->gender=='female')checked @endif value="female" >
                       <label class="form-check-label" for="inputradio">
                       Female
                       </label>
                     </div>
 
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gender" id="inputradio" value="male" checked>
+                      <input class="form-check-input" type="radio" name="gender" id="inputradio" @if($doctor->gender=='male')checked @endif value="male" >
                       <label class="form-check-label" for="inputradio">
                       Male
                       </label>

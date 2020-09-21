@@ -23,6 +23,20 @@
                      </div>
                 </div>
 
+                <div class="form-group row {{$errors->has('doctoremail')? 'has-error':''}}">
+                   <label for="inputdoctoremail" class="col-sm-2 col-form-label">Doctor Email</label>
+                     <div class="col-sm-6">
+                         <input type="email" name="doctoremail" class="form-control @error('doctoremail')is-invalid @enderror" id="inputdoctoremail">  <span class="text-danger">{{$errors->first('doctoremail')}}</span>                       
+                     </div>
+                </div>
+
+                <div class="form-group row {{$errors->has('doctorpassword')? 'has-error':''}}">
+                   <label for="inputdoctorpassword" class="col-sm-2 col-form-label">Doctor Password</label>
+                     <div class="col-sm-6">
+                         <input type="password" name="doctorpassword" class="form-control @error('doctorpassword')is-invalid @enderror" id="inputdoctorpassword">  <span class="text-danger">{{$errors->first('doctorpassword')}}</span>                       
+                     </div>
+                </div>
+
                 <div class="form-group row {{$errors->has('photo')? 'has-error':''}}">
                    <label for="inputphoto" class="col-sm-2 col-form-label">Photo</label>
                      <div class="col-sm-6">
@@ -79,6 +93,7 @@
                 <div class="form-group row">
                 <input type="submit" value="Create" class="btn btn-success ">
                 </div>
+
 
         </form>
         </div>

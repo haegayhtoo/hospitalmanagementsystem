@@ -15,13 +15,17 @@ class CreateDoctorsTable extends Migration
     {
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
-            $table->string('doctor_name');
+            $table->unsignedBigInteger('user_id');
             $table->text('photo');
             $table->string('address');
             $table->string('phone_number');
             $table->string('qualification');
             $table->string('gender'); 
             $table->timestamps();
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
         });
     }
 

@@ -8,7 +8,7 @@ class Doctor extends Model
 {
    protected $fillable = 
    [
-        'doctor_name', 'photo' ,'address', 'phone_number','qualification','gender'
+        'user_id', 'photo' ,'address', 'phone_number','qualification','gender'
     ];
 
     public function schedule(){
@@ -17,5 +17,10 @@ class Doctor extends Model
 
     public function appointments(){
         return $this->hasMany('App\Appointment');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }

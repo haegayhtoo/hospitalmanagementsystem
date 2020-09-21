@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -40,6 +41,7 @@ class AppointmentController extends Controller
     public function store(Request $request)
     {
        // dd($request);
+
     //    $request->validate([
     //     "appointmentname" => 'required',
     //     "gender" => 'required',
@@ -48,6 +50,7 @@ class AppointmentController extends Controller
     //     "address" => 'required',
     //     "disease" => 'required',
     //     "doctor" => 'required',
+
         
         
     // ]);
@@ -60,12 +63,19 @@ class AppointmentController extends Controller
         $appointment->date_of_birth = $request->date;
         $appointment->address = $request->address ;
         $appointment->disease = $request->disease ;
+
+        // $appointment->doctor_name = $request->doctorname;
+        // // $appointment->start_time = $request->starttime;
+        // $appointment->status_id = $request->statusid;
+
         $appointment->doctor_id = $request->doctor;
       
+
         
         $appointment->save();
+        return back();
 
-        return redirect()->route('appointments.index');
+        // return redirect()->route('appointments.index');
     }
 
     /**
@@ -108,6 +118,7 @@ class AppointmentController extends Controller
         "address" => 'required',
         "disease" => 'required',
         "doctorname" => 'required',
+        // "starttime" => 'required',
         "statusid" => 'required',
         
     ]);
@@ -120,6 +131,7 @@ class AppointmentController extends Controller
         $appointment->address = $request->address ;
         $appointment->disease = $request->disease ;
         $appointment->doctor_name = $request->doctorname;
+        // $appointment->start_time = $request->starttime;
         $appointment->status_id = $request->statusid;
         // $appointment->patient_id = $request->patientid;
         // $appointment->schedule_id = $request->scheduleid;

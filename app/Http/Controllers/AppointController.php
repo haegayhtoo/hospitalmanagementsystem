@@ -1,0 +1,154 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Appointment;
+use Illuminate\Http\Request;
+use Auth;
+
+class AppointController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $appointments=Appointment::where('doctor_id',Auth::user()->id)->get();
+        
+        return view('admindoctor.appoints.index',compact('appointments'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+       
+         $appointments=Appointment::all();
+        return view('admindoctor.appoints.create',compact('appointments'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+       // dd($request);
+
+    //    $request->validate([
+    //     "appointmentname" => 'required',
+    //     "gender" => 'required',
+    //     "phonenumber" => 'required',
+    //     "date" => 'required',
+    //     "address" => 'required',
+    //     "disease" => 'required',
+    //     "doctor" => 'required',
+
+        
+        
+    // ]);
+        $appointment = new Appointment;
+        // dd($request->doctor);
+
+        $appointment->name = $request->appointmentname;
+        $appointment->gender = $request->gender;
+        $appointment->phone_number = $request->phonenumber;
+        $appointment->date_of_birth = $request->date;
+        $appointment->address = $request->address ;
+        $appointment->disease = $request->disease ;
+
+        // $appointment->doctor_name = $request->doctorname;
+        // // $appointment->start_time = $request->starttime;
+        // $appointment->status_id = $request->statusid;
+
+        $appointment->doctor_id = $request->doctor;
+      
+
+        
+        $appointment->save();
+
+        return redirect()->route('appoints.index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Appointment  $appointment
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Appointment $appointment)
+    {
+        return view('admindoctor.appoints.detail',compact('appointment'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Appointment  $appointment
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Appointment $appointment)
+    {
+         $appointments = Appointment::all();
+       return view('admindoctor.appoints.edit',compact('appointments','appointment'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Appointment  $appointment
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Appointment $appointment)
+    {
+         $request->validate([
+        "appointmentname" => 'required',
+        "gender" => 'required',
+        "phonenumber" => 'required',
+        "date" => 'required',
+        "address" => 'required',
+        "disease" => 'required',
+        "doctorname" => 'required',
+        // "starttime" => 'required',
+        "statusid" => 'required',
+        
+    ]);
+        
+
+        $appointment->name = $request->appointmentname;
+        $appointment->gender = $request->gender;
+        $appointment->phone_number = $request->phonenumber;
+        $appointment->date_of_birth = $request->date;
+        $appointment->address = $request->address ;
+        $appointment->disease = $request->disease ;
+        $appointment->doctor_name = $request->doctorname;
+        // $appointment->start_time = $request->starttime;
+        $appointment->status_id = $request->statusid;
+        // $appointment->patient_id = $request->patientid;
+        // $appointment->schedule_id = $request->scheduleid;
+        // $appointment->staff_id = $request->staffid;
+        $appointment->save();
+
+        return redirect()->route('appoints.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Appointment  $appointment
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Appointment $appointment)
+    {
+       $appointment->delete();
+        return redirect()->route('appoints.index');
+    }
+}

@@ -9,7 +9,7 @@
     <div class="row ">
       
         <div class="col-md-12">
-           <form method="post" action="{{route('appointments.store')}}">
+          <form method="post" action="{{route('appointments.store')}}">
             @csrf
               <div class="form-group row ">
                    <label for="inputname" class="col-sm-2 col-form-label">Name</label>
@@ -69,59 +69,84 @@
               <div class="form-group row ">
                    <label for="inputdoctorname" class="col-sm-2 col-form-label">Doctor Name</label>
                      <div class="col-sm-6">
-                         {{-- <input type="text" name="doctorname" class="form-control" id="inputdoctorname"> --}} 
-                        {{--  <div class="form-group row"> --}}
-                            <select class="form-control form-control-md" id="inputDoctor" name="doctor">
+
+                             {{-- <input type="text" name="doctorname" class="form-control" id="inputdoctorname"> --}} 
+                          
+
+                          <select class="form-control form-control-md" id="inputDoctor" name="doctor">
                              
-                                <option>Choose Doctor</option>
+                              <option selected disabled>Choose Doctor</option>
                               @foreach($doctors as $doctor)
-                              <option value="{{$doctor->id}}">{{$doctor->doctor_name}}
+                              <option value="{{$doctor->user->id}}">{{$doctor->user->name}}
 
                               </option>
                              
                               @endforeach
+                          </select>
 
-                              
-                          
-                            </select>
-                            <input class="form-control form-control-md" type="text" name="date1" value="" id="date1" readonly="readonly" >
-                        {{--   </div>  --}}
-
+                          <input class="form-control form-control-md" type="time" name="stime" value="" id="stime" readonly="readonly" >
+                          <input class="form-control form-control-md" type="time" name="etime" value="" id="etime" readonly="readonly" >
+                      
                      </div>
-
+                     
               </div>
                 
-               {{--  <div class="form-group row ">
-                   <label for="inputstatusid" class="col-sm-2 col-form-label">Status ID</label>
-                     <div class="col-sm-6">
-                         <input type="number" name="statusid" class="form-control" id="inputstatusid">                   
-                     </div>
-                </div>
- --}}
-               
-
-                <div class="form-group row">
-                  <div class="col-sm-1">
-                    
-                    <input type="submit" value="Save" class="btn btn-info confirmbtn">
-                  </div>
-
-                 {{--  <div class="col-sm-1">
-                     <a href="{{route('index')}}" class="btn btn-info">Cancel</a><br><br>
-                  </div> --}}
-    
             
-        </div>
+                <div class="form-group row">
+                  <div class="col-sm-2">
+                    
+                    {{-- <input type="submit" value="Save" class="btn btn-info confirmbtn"> --}}
 
+                    @role('Patient')
+                       <button class="btn btn-info btn-block mainfullbtncolor confirmbtn"> 
+                          Save 
+                       </button>
+                    @else
+                      <a href="{{route('registerform')}}" class="btn btn-info btn-block mainfullbtncolor "> Register To Save 
+                      </a>
+                    @endrole
+
+
+                  </div>
+                </div>
+
+                
+                
+          </form>
+   
+        </div>
     </div>
 </div>
 </div>
 @endsection
 @section('script')
 <script type="text/javascript">
-  $('document').ready(function(){
+  $(document).ready(function(){
+    $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
     $('#inputDoctor').change(function(){
-      
+
+
+     var id = $(this).val();
+
+
+     $.post('doctorc',{id:id},function(response){
+      console.log(response.dtimes.length);
+      if(response.dtimes.length>0){
+      $.each(response.dtimes,function(i,v){
+        console.log(v);
+        $('#stime').val(v.start_time);
+        $('#etime').val(v.end_time);
+      });}else{
+        $('#stime').val('');
+        $('#etime').val('');
+      }
+     })
+    
+
     })
   })
 

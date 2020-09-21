@@ -16,7 +16,7 @@ class PatientController extends Controller
     {
         
          $patients=Patient::all(); 
-        return view('admin.patients.index',compact('patients'));
+        return view('adminstaff.patients.index',compact('patients'));
     }
 
     /**
@@ -27,7 +27,7 @@ class PatientController extends Controller
     public function create()
     {
          $patients = Patient::all();
-        return view('admin.patients.create',compact('patients'));
+        return view('adminstaff.patients.create',compact('patients'));
     }
 
     /**
@@ -77,7 +77,7 @@ class PatientController extends Controller
      */
     public function show(Patient $patient)
     {
-        return view('admin.patients.detail',compact('patient'));
+        return view('adminstaff.patients.detail',compact('patient'));
     }
 
     /**
@@ -89,7 +89,7 @@ class PatientController extends Controller
     public function edit(Patient $patient)
     {
         $patients = Patient::all();
-       return view('admin.patients.edit',compact('patients','patient'));
+       return view('adminstaff.patients.edit',compact('patients','patient'));
     }
 
     /**

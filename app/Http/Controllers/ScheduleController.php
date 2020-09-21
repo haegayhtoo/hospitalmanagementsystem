@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Schedule;
 use Illuminate\Http\Request;
 use App\Doctor;
+use Auth;
 
 class ScheduleController extends Controller
 {
@@ -15,8 +16,9 @@ class ScheduleController extends Controller
      */
     public function index()
     {
-        $schedules=Schedule::all(); 
-        return view('admin.schedules.index',compact('schedules'));
+
+        $schedules=Schedule::where('user_id',Auth::user()->id)->get(); 
+        return view('admindoctor.schedules.index',compact('schedules'));
         return view('admin.schedules.index',compact('doctor'));
     }
 
@@ -28,7 +30,7 @@ class ScheduleController extends Controller
     public function create()
     {
          $schedules = Schedule::all();
-        return view('admin.schedules.create',compact('schedules'));
+        return view('admindoctor.schedules.create',compact('schedules'));
     }
 
     /**
@@ -40,15 +42,12 @@ class ScheduleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-        "doctorid" => 'required',
-        "scheduledate" => 'required',
         "starttime" => 'required',
         "endtime" => 'required',
     ]);
         $schedule = new Schedule;
        
-        $schedule->doctor_id = $request->doctorid;
-         $schedule->date = $request->scheduledate;
+        $schedule->user_id = Auth::id();
         $schedule->start_time = $request->starttime;
         $schedule->end_time = $request->endtime;
 
@@ -66,7 +65,7 @@ class ScheduleController extends Controller
     public function show(Schedule $schedule)
     {
         $doctors=Doctor::all();
-         return view('admin.schedules.detail',compact('schedule'));
+         return view('admindoctor.schedules.detail',compact('schedule'));
     }
     
 
@@ -80,7 +79,7 @@ class ScheduleController extends Controller
     {
         
         $schedules = Schedule::all();
-       return view('admin.schedules.edit',compact('schedules','schedule'));
+       return view('admindoctor.schedules.edit',compact('schedules','schedule'));
     }
 
     /**
@@ -101,7 +100,7 @@ class ScheduleController extends Controller
         
        
         $schedule->doctor_id = $request->doctorid;
-         $schedule->date = $request->scheduledate;
+        $schedule->date = $request->scheduledate;
         $schedule->start_time = $request->starttime;
         $schedule->end_time = $request->endtime;
 

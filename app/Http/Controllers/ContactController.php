@@ -55,8 +55,8 @@ class ContactController extends Controller
         $contact->message = $request->message;
        
         $contact->save();
-
-        return redirect()->route('contacts.index');
+        return back();
+        // return redirect()->route('contacts.index');
     }
 
     /**

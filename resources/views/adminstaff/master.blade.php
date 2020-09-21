@@ -52,7 +52,14 @@
         <a class="nav-link" href="{{route('appointments.index')}}">
           <i class="fas fa-fw fa-table"></i>
           <span>Appointment</span></a>
-      </li> 
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('patient.index')}}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Patient</span></a>
+      </li>
+ 
 
       <li class="nav-item">
         <a class="nav-link" href="{{route('contacts.index')}}">
